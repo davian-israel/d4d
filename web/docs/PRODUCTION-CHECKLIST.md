@@ -3,7 +3,8 @@
 - [ ] Production `DATABASE_URL` points to a dedicated Postgres instance (not dev/preview).
 - [ ] `AUTH_SECRET` is unique per environment and stored only in Vercel (or your host) secrets.
 - [ ] `prisma migrate deploy` runs against production as part of release automation.
-- [ ] **Initial data:** run `prisma db seed` once (or when refreshing catalog) with `SEED_ENV=production` and **`SEED_ADMIN_PASSWORD`** set to a strong secret; see [README](README.md) — do not use development default passwords in production.
+- [ ] **Initial data:** run `prisma db seed` once (or when refreshing catalog) with `SEED_ENV=production` and **`SEED_ADMIN_PASSWORD`** set to a strong secret; see [README](../README.md) — do not use development default passwords in production.
+- [ ] **Admin credentials (production):** on the **production** site URL, open **`/login`**, sign in with the **production** admin email and password from your seed step (stored in your vault—not the dev defaults), and confirm **`/admin`** loads the dashboard. Re-run after auth or database changes.
 - [ ] Square **live** `SQUARE_ACCESS_TOKEN`, `SQUARE_LOCATION_ID`, and `SQUARE_ENV=production` are set only on Production; Preview uses sandbox.
 - [ ] `MOCK_PAYMENTS` is unset or `false` in Production.
 - [ ] `SQUARE_WEBHOOK_URL` matches the public Production URL for `/api/webhooks/square`; signature key matches the Square app configuration.

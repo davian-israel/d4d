@@ -42,6 +42,18 @@ After `vercel link` in `web/`, production deployments are available at the team 
 
 Auth is split into **`auth.config.ts`** (edge-safe, no Prisma) and **`auth.ts`** (Credentials + Prisma) so **middleware stays under Vercel’s 1 MB Edge limit** on Hobby.
 
+## Production smoke (admin)
+
+After a production deploy—and once the database is migrated and seeded with **`SEED_ENV=production`** (see [README](../README.md))—confirm **credentials sign-in** for the merchandising console:
+
+1. Open the **production** site origin (custom domain or deployment URL above).
+2. Navigate to **`/login`** and sign in with the **production** admin email and password you set at seed time (not the development defaults).
+3. Confirm **`/admin`** loads the admin dashboard.
+
+The full release gate—including this step—is in **[PRODUCTION-CHECKLIST.md](PRODUCTION-CHECKLIST.md)**. Passing CI or Playwright locally does **not** prove production admin credentials work; always verify on the live production URL.
+
+**Synthetic or uptime monitors:** If you add checks that authenticate as admin, store the login only in your provider’s **secrets** (e.g. vault or monitor UI)—**never** commit production passwords to the repo.
+
 ## Environment variables (see `.env.example`)
 
 - `DATABASE_URL`
