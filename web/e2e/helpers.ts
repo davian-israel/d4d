@@ -28,3 +28,11 @@ export async function loginAsAdmin(page: Page): Promise<void> {
   await expect(page.getByTestId("admin-dashboard")).toBeVisible({ timeout: 15_000 });
 }
 
+export async function loginAsCustomer(page: Page): Promise<void> {
+  await page.goto("/login");
+  await page.getByTestId("login-email").fill("customer@destiny4divine.test");
+  await page.getByTestId("login-password").fill("Admin12345!");
+  await page.getByTestId("login-submit").click();
+  await expect(page.getByTestId("storefront-account-page")).toBeVisible({ timeout: 15_000 });
+}
+

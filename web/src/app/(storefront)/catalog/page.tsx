@@ -15,7 +15,7 @@ export default async function CatalogPage() {
   const qtyByProduct = await getCartQuantityByProductId();
 
   return (
-    <main className="selection:bg-primary-container selection:text-white">
+    <main className="selection:bg-primary-container selection:text-white" data-testid="storefront-catalog-page">
       <section className="mb-20 px-6 md:px-12">
         <div className="mx-auto flex max-w-7xl flex-col items-end gap-8 md:flex-row">
           <div className="md:w-1/2">

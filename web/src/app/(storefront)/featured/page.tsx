@@ -11,7 +11,7 @@ export default async function FeaturedCarouselPage() {
   });
 
   return (
-    <main className="pb-12 pt-6">
+    <main className="pb-12 pt-6" data-testid="storefront-featured-page">
       <section className="px-6 py-16">
         <div className="mb-12 flex items-end justify-between">
           <div>

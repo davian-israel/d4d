@@ -10,7 +10,7 @@ const mapImage =
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen pb-32">
+    <main className="min-h-screen pb-32" data-testid="storefront-contact-page">
       <section className="relative flex h-[280px] items-center justify-center overflow-hidden md:h-[353px]">
         <div className="absolute inset-0 z-0">
           <Image

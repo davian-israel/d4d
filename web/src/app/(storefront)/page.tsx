@@ -15,7 +15,7 @@ export default async function HomePage() {
   });
 
   return (
-    <main className="relative overflow-hidden">
+    <main className="relative overflow-hidden" data-testid="storefront-home-page">
       <section className="relative flex min-h-[751px] items-center overflow-hidden px-6 py-20 md:px-12">
         <div className="absolute inset-0 z-0">
           <Image

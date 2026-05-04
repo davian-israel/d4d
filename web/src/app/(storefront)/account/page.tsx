@@ -13,7 +13,7 @@ export default async function AccountPage() {
   if (!user) redirect("/login");
 
   return (
-    <div className="mx-auto max-w-xl px-4 py-12 sm:px-6">
+    <div className="mx-auto max-w-xl px-4 py-12 sm:px-6" data-testid="storefront-account-page">
       <h1 className="font-headline text-3xl text-primary">Your profile</h1>
       <p className="mt-2 text-sm text-on-surface-variant">{user.email}</p>
       <div className="mt-8">
