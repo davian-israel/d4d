@@ -55,7 +55,8 @@ Use the **admin** row to manage catalog and merchandising. **Do not** use these 
 - `npm run db:migrate` — development migrations
 - `npm run db:deploy` — production-style `prisma migrate deploy`
 - `npm run db:seed`
-- `npm run test:e2e` — Playwright (requires DB migrated + seeded; run `npm run build` first for `next start` in CI)
+- `npm run test:e2e` — Playwright (requires DB migrated + seeded; run `npm run build` first for `next start` in CI). Does **not** hit production.
+- `npm run test:e2e:production` — Playwright against the **live** site (default `https://destiny4d.xyz`). Set **`PLAYWRIGHT_PROD_ADMIN_PASSWORD`** (and optional `PLAYWRIGHT_PROD_BASE_URL`, `PLAYWRIGHT_PROD_ADMIN_EMAIL`, customer vars). Never commit real passwords. **Skips** customer test unless `PLAYWRIGHT_PROD_CUSTOMER_*` are set. Does **not** complete checkout (no real charges). **Admin tests** only pass if that password matches the admin user in the **same** Postgres instance your deployment uses (`vercel env pull` → seed that `DATABASE_URL`, then deploy).
 
 ## Docs
 

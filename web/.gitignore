@@ -36,6 +36,9 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# one-time local output from production seed (do not commit)
+.admin-password-onetime.txt
+
 # vercel
 .vercel
 

@@ -24,7 +24,7 @@ export function LoginForm() {
       callbackUrl,
     });
     setPending(false);
-    if (res?.error) {
+    if (res?.error || res?.ok === false) {
       setError("Invalid email or password.");
       return;
     }

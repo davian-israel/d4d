@@ -52,6 +52,8 @@ After a production deploy—and once the database is migrated and seeded with **
 
 The full release gate—including this step—is in **[PRODUCTION-CHECKLIST.md](PRODUCTION-CHECKLIST.md)**. Passing CI or Playwright locally does **not** prove production admin credentials work; always verify on the live production URL.
 
+**Optional automated smoke:** from `web/`, run **`npm run test:e2e:production`** with **`PLAYWRIGHT_PROD_ADMIN_PASSWORD`** (and optional `PLAYWRIGHT_PROD_BASE_URL`) as documented in the [README](../README.md). This hits the **live** origin (default **https://destiny4d.xyz**); it does **not** replace the manual sign-in check until admin credentials match the deployment database.
+
 **Synthetic or uptime monitors:** If you add checks that authenticate as admin, store the login only in your provider’s **secrets** (e.g. vault or monitor UI)—**never** commit production passwords to the repo.
 
 ## Environment variables (see `.env.example`)

@@ -50,14 +50,16 @@ test.describe("Admin products", () => {
     await form.getByTestId("admin-product-create-submit").click();
     await createPost;
     await expect(page.getByTestId("admin-product-create-success")).toBeVisible({ timeout: 15_000 });
-    await expect(page.getByTestId("admin-products-table").getByText(name)).toBeVisible();
+    await expect(page.getByTestId("admin-product-row").filter({ hasText: slug })).toBeVisible({
+      timeout: 15_000,
+    });
 
-    await page.goto("/catalog");
-    await expect(page.getByText(name)).toBeVisible();
+    await page.goto(`/product/${slug}`);
+    await expect(page.locator("h1")).toContainText(name, { timeout: 15_000 });
 
     const editLink = page
       .getByTestId("admin-product-row")
-      .filter({ hasText: name })
+      .filter({ hasText: slug })
       .getByTestId("admin-product-edit");
     await page.goto("/admin/products");
     await editLink.click();
@@ -77,11 +79,14 @@ test.describe("Admin products", () => {
     await expect(page.getByTestId("admin-product-update-success")).toBeVisible({ timeout: 15_000 });
 
     await page.goto("/admin/products");
-    await expect(page.getByTestId("admin-products-table").getByText(`${name} Updated`)).toBeVisible();
+    await expect(page.getByTestId("admin-product-row").filter({ hasText: slug })).toContainText(
+      `${name} Updated`,
+      { timeout: 15_000 },
+    );
 
     await page
       .getByTestId("admin-product-row")
-      .filter({ hasText: `${name} Updated` })
+      .filter({ hasText: slug })
       .getByTestId("admin-product-edit")
       .click();
     await page.getByTestId("admin-product-edit-form").getByRole("checkbox", { name: /published/i }).uncheck();
@@ -96,12 +101,12 @@ test.describe("Admin products", () => {
     await unpublishPost;
 
     await page.goto("/catalog");
-    await expect(page.getByText(`${name} Updated`)).toHaveCount(0);
+    await expect(page.locator(`[data-testid="product-card"] a[href="/product/${slug}"]`)).toHaveCount(0);
 
     await page.goto("/admin/products");
     await page
       .getByTestId("admin-product-row")
-      .filter({ hasText: `${name} Updated` })
+      .filter({ hasText: slug })
       .getByTestId("admin-product-edit")
       .click();
 
@@ -109,7 +114,7 @@ test.describe("Admin products", () => {
       page.waitForURL(/\/admin\/products$/, { timeout: 25_000 }),
       page.getByTestId("admin-product-delete-submit").click(),
     ]);
-    await expect(page.getByTestId("admin-products-table").getByText(`${name} Updated`)).toHaveCount(0);
+    await expect(page.getByTestId("admin-product-row").filter({ hasText: slug })).toHaveCount(0);
   });
 
   test("delete is blocked when product has order history", async ({ page }) => {
