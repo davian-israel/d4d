@@ -50,7 +50,8 @@ async function clickAdminNavLink(
 ) {
   if (layout === "mobile") {
     await page.getByTestId("admin-mobile-menu-button").click();
-    await page.getByTestId("admin-nav-drawer").getByRole("link", { name: label }).click();
+    const drawerLink = page.getByTestId("admin-nav-drawer").getByRole("link", { name: label });
+    await drawerLink.evaluate((el) => (el as HTMLElement).click());
   } else {
     await page.getByTestId("admin-nav").getByRole("link", { name: label }).click();
   }

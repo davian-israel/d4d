@@ -22,7 +22,7 @@ export default async function AdminSalesPage() {
 
       <div className="overflow-hidden rounded-2xl border border-outline-variant/10 bg-surface-container-lowest shadow-[0_20px_50px_rgba(118,46,0,0.05)]">
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm">
+          <table data-testid="admin-sales-table" className="w-full text-left text-sm">
             <thead>
               <tr className="border-b border-outline-variant/20 bg-surface-container-low text-on-surface-variant">
                 <th className="py-4 pl-6 pr-4">Order</th>

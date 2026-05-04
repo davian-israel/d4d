@@ -121,8 +121,8 @@ test.describe("Admin products", () => {
     await loginAsAdmin(page);
 
     await page.goto("/catalog");
-    const first = page.getByTestId("product-card").first();
-    await first.getByRole("link").first().click();
+    const card = page.getByTestId("product-card").nth(2);
+    await card.getByRole("link").first().click();
     await page.waitForURL(/\/product\/[^/]+/, { timeout: 15_000 });
     const slugMatch = page.url().match(/\/product\/([^/?]+)/);
     expect(slugMatch).toBeTruthy();

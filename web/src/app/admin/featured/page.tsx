@@ -31,6 +31,7 @@ export default async function AdminFeaturedPage() {
 
       <form
         action={addFeaturedPlacement}
+        data-testid="admin-featured-add-form"
         className="flex max-w-2xl flex-wrap items-end gap-4 rounded-2xl bg-surface-container-low p-6"
       >
         <div className="min-w-[200px] flex-1">
@@ -62,6 +63,7 @@ export default async function AdminFeaturedPage() {
         </div>
         <button
           type="submit"
+          data-testid="admin-featured-add-submit"
           className="flex items-center gap-2 rounded-full bg-gradient-to-br from-primary to-primary-container px-6 py-3 text-sm font-bold text-on-primary shadow-lg"
         >
           <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>
@@ -71,7 +73,7 @@ export default async function AdminFeaturedPage() {
         </button>
       </form>
 
-      <ul className="grid gap-4 sm:grid-cols-2">
+      <ul data-testid="admin-featured-list" className="grid gap-4 sm:grid-cols-2">
         {placements.map((f) => (
           <li
             key={f.id}

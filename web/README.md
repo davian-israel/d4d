@@ -18,6 +18,22 @@ Next.js storefront + admin for the OpenSpec change `nextjs-destiny-commerce-squa
 - **URL:** `/admin` (e.g. `http://localhost:3000/admin` locally).
 - **Sign in** uses **Auth.js** credentials (`User.passwordHash`).
 
+### Local admin verification (Playwright)
+
+From `web/` with **Postgres** up, `.env.local` set, and default seed (see **Seeded logins** below):
+
+1. `npm install`
+2. `npm run db:migrate` and `npm run db:seed`
+3. `npx playwright install chromium` (once per machine, or when Playwright reports a missing browser)
+4. `npm run build` — the default Playwright config starts `next start` for `test:e2e`, which needs a prior build
+5. `npm run test:e2e`  
+   - Admin-only: `npx playwright test e2e/admin-navigation.spec.ts e2e/admin-products.spec.ts e2e/admin-surface.spec.ts`  
+   - `PLAYWRIGHT_BASE_URL` / `use.baseURL` default to `http://localhost:3000` (see `playwright.config.ts`).
+
+`loginAsAdmin` in `e2e/helpers.ts` must use the same admin email and password as the default seed output (`prisma/seed.ts`). Feature coverage by area: [docs/ADMIN-FEATURE-MATRIX.md](docs/ADMIN-FEATURE-MATRIX.md).
+
+**Note:** A full parallel `test:e2e` run can deplete product stock and leave add-to-cart buttons disabled in storefront tests. If storefront specs fail with a disabled **Add to cart** button, re-seed the database and re-run, or use fewer workers.
+
 ### Seeded logins (local / default seed only)
 
 After `npm run db:seed` with **default** settings (`SEED_ENV` unset):
@@ -60,6 +76,7 @@ Use the **admin** row to manage catalog and merchandising. **Do not** use these 
 
 ## Docs
 
+- [docs/ADMIN-FEATURE-MATRIX.md](docs/ADMIN-FEATURE-MATRIX.md) — admin routes, actions, and e2e mapping
 - [docs/MIGRATIONS.md](docs/MIGRATIONS.md) — dev vs production migrations
 - [docs/VERCEL.md](docs/VERCEL.md) — environment variables and deploy notes
 - [docs/PRODUCTION-CHECKLIST.md](docs/PRODUCTION-CHECKLIST.md)

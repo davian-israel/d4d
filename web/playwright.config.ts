@@ -9,14 +9,14 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: "list",
   use: {
-    baseURL: process.env.PLAYWRIGHT_BASE_URL ?? "http://127.0.0.1:3000",
+    baseURL: process.env.PLAYWRIGHT_BASE_URL ?? "http://localhost:3000",
     trace: "on-first-retry",
     viewport: { width: 390, height: 844 },
   },
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
   webServer: {
     command: "npm run start",
-    url: "http://127.0.0.1:3000",
+    url: "http://localhost:3000",
     // Prefer reusing a local dev server; set PW_FORCE_WEBSERVER=1 to always start a fresh `npm run start`.
     reuseExistingServer: process.env.PW_FORCE_WEBSERVER !== "1",
     cwd: __dirname,
