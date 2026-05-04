@@ -1,47 +1,12 @@
 import { test, expect } from "@playwright/test";
+import { ADMIN_SHELL_DESTINATIONS } from "./admin-shell-destinations";
 import { loginAsAdmin } from "./helpers";
 
 /**
  * Covers OpenSpec admin-navigation-verification: shell menu drives routing
  * (desktop sidebar + mobile drawer), not only direct URL loads.
  */
-const destinations = [
-  {
-    label: "Overview",
-    path: /\/admin$/,
-    assert: async (page: import("@playwright/test").Page) => {
-      await expect(page.getByTestId("admin-dashboard")).toBeVisible();
-    },
-  },
-  {
-    label: "Categories",
-    path: /\/admin\/categories$/,
-    assert: async (page: import("@playwright/test").Page) => {
-      await expect(page.getByRole("heading", { name: /category vault/i })).toBeVisible();
-    },
-  },
-  {
-    label: "Products",
-    path: /\/admin\/products$/,
-    assert: async (page: import("@playwright/test").Page) => {
-      await expect(page.getByRole("heading", { name: /product inventory/i })).toBeVisible();
-    },
-  },
-  {
-    label: "Featured",
-    path: /\/admin\/featured$/,
-    assert: async (page: import("@playwright/test").Page) => {
-      await expect(page.getByRole("heading", { name: /manage featured/i })).toBeVisible();
-    },
-  },
-  {
-    label: "Sales",
-    path: /\/admin\/sales$/,
-    assert: async (page: import("@playwright/test").Page) => {
-      await expect(page.getByRole("heading", { name: /sales management/i })).toBeVisible();
-    },
-  },
-] as const;
+const destinations = ADMIN_SHELL_DESTINATIONS;
 
 async function clickAdminNavLink(
   page: import("@playwright/test").Page,

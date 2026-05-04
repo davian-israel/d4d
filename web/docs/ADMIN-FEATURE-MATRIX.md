@@ -4,7 +4,7 @@ Maps **AdminShell** navigation targets to routes, server-side behavior, and Play
 
 | Nav label | Route | Server actions / API | Automated coverage |
 |-----------|--------|----------------------|--------------------|
-| Overview | `/admin` | Layout + session | [`admin-navigation.spec.ts`](../e2e/admin-navigation.spec.ts), [`storefront.spec.ts`](../e2e/storefront.spec.ts) (sign-in), [`visual-parity.spec.ts`](../e2e/visual-parity.spec.ts) |
+| Overview | `/admin` | Layout + session | [`admin-login-all-pages.spec.ts`](../e2e/admin-login-all-pages.spec.ts) (login → all shell URLs), [`admin-navigation.spec.ts`](../e2e/admin-navigation.spec.ts), [`storefront.spec.ts`](../e2e/storefront.spec.ts) (sign-in), [`visual-parity.spec.ts`](../e2e/visual-parity.spec.ts) |
 | Categories | `/admin/categories` | [`createCategory`](../src/lib/actions/admin/categories.ts) | [`admin-surface.spec.ts`](../e2e/admin-surface.spec.ts) (create + Saved), [`visual-parity.spec.ts`](../e2e/visual-parity.spec.ts) (landmark) |
 | Products | `/admin/products`, `/admin/products/[id]/edit` | [`products.ts`](../src/lib/actions/admin/products.ts) | [`admin-navigation.spec.ts`](../e2e/admin-navigation.spec.ts), [`admin-products.spec.ts`](../e2e/admin-products.spec.ts) |
 | Featured | `/admin/featured` | [`featured.ts`](../src/lib/actions/admin/featured.ts) | [`admin-surface.spec.ts`](../e2e/admin-surface.spec.ts) (add placement), [`visual-parity.spec.ts`](../e2e/visual-parity.spec.ts) |

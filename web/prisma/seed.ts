@@ -17,12 +17,14 @@ interface SeedCredentials {
   adminPassword: string;
   customerEmail: string | null;
   customerPassword: string | null;
+  admin2Email: string | null;
+  admin2Password: string | null;
 }
 
 function resolveSeedCredentials(): SeedCredentials {
   const productionMode = process.env.SEED_ENV === "production";
   const adminEmail =
-    process.env.SEED_ADMIN_EMAIL?.trim() || "admin@destiny4divine.test";
+    process.env.SEED_ADMIN_EMAIL?.trim() || "admin@destiny4divine.xyz";
 
   if (productionMode) {
     const adminPassword = process.env.SEED_ADMIN_PASSWORD ?? "";
@@ -41,12 +43,28 @@ function resolveSeedCredentials(): SeedCredentials {
         );
       }
     }
+    const admin2Email = process.env.SEED_ADMIN2_EMAIL?.trim() || null;
+    let admin2Password: string | null = null;
+    if (admin2Email) {
+      admin2Password = process.env.SEED_ADMIN2_PASSWORD ?? "";
+      if (!admin2Password) {
+        throw new Error("[seed] SEED_ADMIN2_EMAIL is set; SEED_ADMIN2_PASSWORD is required.");
+      }
+      if (admin2Password.length < PRODUCTION_MIN_PASSWORD) {
+        throw new Error(
+          `[seed] SEED_ADMIN2_PASSWORD must be at least ${PRODUCTION_MIN_PASSWORD} characters when SEED_ENV=production.`,
+        );
+      }
+    }
+
     return {
       productionMode,
       adminEmail,
       adminPassword,
       customerEmail,
       customerPassword,
+      admin2Email,
+      admin2Password,
     };
   }
 
@@ -54,10 +72,16 @@ function resolveSeedCredentials(): SeedCredentials {
     process.env.SEED_ADMIN_PASSWORD && process.env.SEED_ADMIN_PASSWORD.length > 0
       ? process.env.SEED_ADMIN_PASSWORD
       : "Admin12345!";
-  const customerEmail = "customer@destiny4divine.test";
+  const customerEmail = "customer@destiny4divine.xyz";
   const customerPassword =
     process.env.SEED_CUSTOMER_PASSWORD && process.env.SEED_CUSTOMER_PASSWORD.length > 0
       ? process.env.SEED_CUSTOMER_PASSWORD
+      : "Admin12345!";
+
+  const admin2Email = process.env.SEED_ADMIN2_EMAIL?.trim() || null;
+  const admin2Password =
+    process.env.SEED_ADMIN2_PASSWORD && process.env.SEED_ADMIN2_PASSWORD.length > 0
+      ? process.env.SEED_ADMIN2_PASSWORD
       : "Admin12345!";
 
   return {
@@ -66,6 +90,8 @@ function resolveSeedCredentials(): SeedCredentials {
     adminPassword,
     customerEmail,
     customerPassword,
+    admin2Email,
+    admin2Password,
   };
 }
 
@@ -83,6 +109,21 @@ async function main() {
       passwordHash: adminHash,
     },
   });
+
+  let admin2: { email: string } | null = null;
+  if (creds.admin2Email && creds.admin2Password) {
+    const admin2Hash = await hash(creds.admin2Password, 10);
+    admin2 = await prisma.user.upsert({
+      where: { email: creds.admin2Email },
+      update: { passwordHash: admin2Hash, role: Role.ADMIN },
+      create: {
+        email: creds.admin2Email,
+        name: "Admin 2",
+        role: Role.ADMIN,
+        passwordHash: admin2Hash,
+      },
+    });
+  }
 
   let customer: { email: string | null } | null = null;
   if (creds.customerEmail && creds.customerPassword) {
@@ -298,6 +339,7 @@ async function main() {
   console.log("Seed complete", {
     mode: creds.productionMode ? "production" : "development",
     admin: admin.email,
+    admin2: admin2?.email ?? null,
     customer: customer?.email ?? null,
   });
 }

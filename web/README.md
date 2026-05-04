@@ -56,8 +56,12 @@ Use the **admin** row to manage catalog and merchandising. **Do not** use these 
    SEED_ENV=production \
    SEED_ADMIN_EMAIL="admin@yourdomain.com" \
    SEED_ADMIN_PASSWORD="<your-strong-password-here>" \
+   SEED_ADMIN2_EMAIL="admin2@yourdomain.com" \
+   SEED_ADMIN2_PASSWORD="<second-admin-password-min-12-chars>" \
    dotenv -e .env.production.local -- npx prisma db seed
    ```
+
+   Omit `SEED_ADMIN2_*` if you do not need a second admin. With `SEED_ENV=production`, every seeded password must be **at least 12 characters** (so values like `admin1234!` are too short—extend them or choose a longer passphrase).
 
    Replace `.env.production.local` with whatever file holds production `DATABASE_URL`. **Never** commit real production passwords.
 
