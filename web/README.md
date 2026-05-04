@@ -13,10 +13,41 @@ Next.js storefront + admin for the OpenSpec change `nextjs-destiny-commerce-squa
 5. `npm run db:seed`
 6. `npm run dev`
 
-Seeded logins (development only):
+### Admin console
 
-- Admin: `admin@destiny4divine.test` / `Admin12345!`
-- Customer: `customer@destiny4divine.test` / `Admin12345!`
+- **URL:** `/admin` (e.g. `http://localhost:3000/admin` locally).
+- **Sign in** uses **Auth.js** credentials (`User.passwordHash`).
+
+### Seeded logins (local / default seed only)
+
+After `npm run db:seed` with **default** settings (`SEED_ENV` unset):
+
+| Role | Email | Password |
+|------|--------|----------|
+| Admin | `admin@destiny4divine.test` | `Admin12345!` |
+| Customer | `customer@destiny4divine.test` | `Admin12345!` |
+
+Use the **admin** row to manage catalog and merchandising. **Do not** use these defaults in production.
+
+### Production database: migrate + seed
+
+1. Point `DATABASE_URL` at the **production** Postgres instance (often via a gitignored env file or CI secret).
+2. Apply schema: `npm run db:deploy` (or `dotenv -e <your-prod-env-file> -- npx prisma migrate deploy`).
+3. Seed **catalog + admin** with explicit production mode and a **strong** password (minimum 12 characters). Example:
+
+   ```bash
+   cd web
+   SEED_ENV=production \
+   SEED_ADMIN_EMAIL="admin@yourdomain.com" \
+   SEED_ADMIN_PASSWORD="<your-strong-password-here>" \
+   dotenv -e .env.production.local -- npx prisma db seed
+   ```
+
+   Replace `.env.production.local` with whatever file holds production `DATABASE_URL`. **Never** commit real production passwords.
+
+4. Optional second user (e.g. demo customer): set `SEED_CUSTOMER_EMAIL` and `SEED_CUSTOMER_PASSWORD` (also min 12 characters in production).
+
+**What seed fills:** `User` (admin + optional customer), `Category`, `Product`, `FeaturedPlacement`. **Not seeded:** carts, orders, contact submissions, webhook events, sessions — those are created at runtime.
 
 ## Scripts
 

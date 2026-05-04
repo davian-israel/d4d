@@ -9,30 +9,95 @@ import {
 
 const prisma = new PrismaClient();
 
+const PRODUCTION_MIN_PASSWORD = 12;
+
+interface SeedCredentials {
+  productionMode: boolean;
+  adminEmail: string;
+  adminPassword: string;
+  customerEmail: string | null;
+  customerPassword: string | null;
+}
+
+function resolveSeedCredentials(): SeedCredentials {
+  const productionMode = process.env.SEED_ENV === "production";
+  const adminEmail =
+    process.env.SEED_ADMIN_EMAIL?.trim() || "admin@destiny4divine.test";
+
+  if (productionMode) {
+    const adminPassword = process.env.SEED_ADMIN_PASSWORD ?? "";
+    if (adminPassword.length < PRODUCTION_MIN_PASSWORD) {
+      throw new Error(
+        `[seed] SEED_ENV=production requires SEED_ADMIN_PASSWORD (minimum ${PRODUCTION_MIN_PASSWORD} characters).`,
+      );
+    }
+    const customerEmail = process.env.SEED_CUSTOMER_EMAIL?.trim() || null;
+    let customerPassword: string | null = null;
+    if (customerEmail) {
+      customerPassword = process.env.SEED_CUSTOMER_PASSWORD ?? "";
+      if (customerPassword.length < PRODUCTION_MIN_PASSWORD) {
+        throw new Error(
+          `[seed] When SEED_CUSTOMER_EMAIL is set, SEED_CUSTOMER_PASSWORD must be set (minimum ${PRODUCTION_MIN_PASSWORD} characters).`,
+        );
+      }
+    }
+    return {
+      productionMode,
+      adminEmail,
+      adminPassword,
+      customerEmail,
+      customerPassword,
+    };
+  }
+
+  const adminPassword =
+    process.env.SEED_ADMIN_PASSWORD && process.env.SEED_ADMIN_PASSWORD.length > 0
+      ? process.env.SEED_ADMIN_PASSWORD
+      : "Admin12345!";
+  const customerEmail = "customer@destiny4divine.test";
+  const customerPassword =
+    process.env.SEED_CUSTOMER_PASSWORD && process.env.SEED_CUSTOMER_PASSWORD.length > 0
+      ? process.env.SEED_CUSTOMER_PASSWORD
+      : "Admin12345!";
+
+  return {
+    productionMode,
+    adminEmail,
+    adminPassword,
+    customerEmail,
+    customerPassword,
+  };
+}
+
 async function main() {
-  const password = await hash("Admin12345!", 10);
+  const creds = resolveSeedCredentials();
+  const adminHash = await hash(creds.adminPassword, 10);
 
   const admin = await prisma.user.upsert({
-    where: { email: "admin@destiny4divine.test" },
-    update: { passwordHash: password, role: Role.ADMIN },
+    where: { email: creds.adminEmail },
+    update: { passwordHash: adminHash, role: Role.ADMIN },
     create: {
-      email: "admin@destiny4divine.test",
+      email: creds.adminEmail,
       name: "Admin",
       role: Role.ADMIN,
-      passwordHash: password,
+      passwordHash: adminHash,
     },
   });
 
-  const customer = await prisma.user.upsert({
-    where: { email: "customer@destiny4divine.test" },
-    update: { passwordHash: password, role: Role.CUSTOMER },
-    create: {
-      email: "customer@destiny4divine.test",
-      name: "Customer",
-      role: Role.CUSTOMER,
-      passwordHash: password,
-    },
-  });
+  let customer: { email: string | null } | null = null;
+  if (creds.customerEmail && creds.customerPassword) {
+    const customerHash = await hash(creds.customerPassword, 10);
+    customer = await prisma.user.upsert({
+      where: { email: creds.customerEmail },
+      update: { passwordHash: customerHash, role: Role.CUSTOMER },
+      create: {
+        email: creds.customerEmail,
+        name: "Customer",
+        role: Role.CUSTOMER,
+        passwordHash: customerHash,
+      },
+    });
+  }
 
   const catWellness = await prisma.category.upsert({
     where: { slug: "wellness" },
@@ -230,7 +295,11 @@ async function main() {
     }
   }
 
-  console.log("Seed complete", { admin: admin.email, customer: customer.email });
+  console.log("Seed complete", {
+    mode: creds.productionMode ? "production" : "development",
+    admin: admin.email,
+    customer: customer?.email ?? null,
+  });
 }
 
 main()
