@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Destiny4Divine Admin Console</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#e8e1da",
+              "tertiary": "#544132",
+              "inverse-surface": "#33302b",
+              "tertiary-fixed": "#fbddc8",
+              "on-primary-fixed": "#351000",
+              "on-secondary": "#ffffff",
+              "secondary-fixed": "#fbdccf",
+              "on-primary": "#ffffff",
+              "surface-variant": "#e8e1da",
+              "secondary-container": "#f8d9cc",
+              "tertiary-container": "#6d5848",
+              "surface-bright": "#fff8f1",
+              "outline": "#8a7268",
+              "on-tertiary": "#ffffff",
+              "on-surface": "#1e1b17",
+              "primary-fixed-dim": "#ffb693",
+              "on-tertiary-fixed": "#27180c",
+              "on-background": "#1e1b17",
+              "error-container": "#ffdad6",
+              "secondary": "#705950",
+              "on-surface-variant": "#564239",
+              "inverse-primary": "#ffb693",
+              "surface-container-low": "#faf2ea",
+              "inverse-on-surface": "#f7f0e8",
+              "on-primary-container": "#ffc9b0",
+              "primary-fixed": "#ffdbcc",
+              "on-error": "#ffffff",
+              "background": "#fff8f1",
+              "tertiary-fixed-dim": "#ddc1ad",
+              "surface-tint": "#9f4103",
+              "primary-container": "#9c3f00",
+              "outline-variant": "#ddc1b4",
+              "primary": "#762e00",
+              "on-tertiary-container": "#ecd0bb",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#564334",
+              "on-primary-fixed-variant": "#7a3000",
+              "surface-container-high": "#eee7df",
+              "surface-container": "#f4ede5",
+              "surface": "#fff8f1",
+              "on-secondary-fixed-variant": "#574239",
+              "on-secondary-container": "#755e54",
+              "on-error-container": "#93000a",
+              "surface-dim": "#e0d9d1",
+              "error": "#ba1a1a",
+              "secondary-fixed-dim": "#dec0b4",
+              "on-secondary-fixed": "#281810"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Work Sans"],
+              "label": ["Work Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Work Sans', sans-serif;
+      }
+      h1, h2, h3, .serif-text {
+        font-family: 'Noto Serif', serif;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
+<aside class="fixed inset-y-0 left-0 z-[60] py-10 flex flex-col h-full w-72 rounded-r-3xl bg-[#E8E1DA] shadow-2xl overflow-y-auto">
+<div class="font-serif text-xl mb-8 px-6 italic text-[#762E00]">Admin Console</div>
+<nav class="space-y-2 px-4">
+<a class="bg-[#9C3F00] text-white rounded-xl shadow-lg flex items-center gap-3 px-4 py-3 hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="text-stone-600 hover:bg-stone-200/50 rounded-xl flex items-center gap-3 px-4 py-3 hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-medium">Products</span>
+</a>
+<a class="text-stone-600 hover:bg-stone-200/50 rounded-xl flex items-center gap-3 px-4 py-3 hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-medium">Categories</span>
+</a>
+<a class="text-stone-600 hover:bg-stone-200/50 rounded-xl flex items-center gap-3 px-4 py-3 hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-medium">Sales</span>
+</a>
+<a class="text-stone-600 hover:bg-stone-200/50 rounded-xl flex items-center gap-3 px-4 py-3 hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-6 pt-10 border-t border-stone-300/30">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+<div>
+<p class="text-sm font-bold text-primary">Curator Jane</p>
+<p class="text-[10px] uppercase tracking-widest text-stone-500">Master Admin</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="ml-72 min-h-screen p-8 lg:p-12">
+<header class="flex justify-between items-end mb-16">
+<div class="max-w-2xl">
+<p class="text-primary font-medium tracking-[0.2em] uppercase text-xs mb-2">Sacred Earth &amp; Grace</p>
+<h1 class="text-4xl lg:text-5xl font-bold tracking-tight text-on-surface italic">Daily Overview &amp; Analytics</h1>
+<p class="text-on-surface-variant mt-4 font-light text-lg">Harnessing the pulse of the divine marketplace. Your sanctuary for data and growth.</p>
+</div>
+<div class="hidden lg:flex items-center gap-4 bg-surface-container-low p-2 rounded-full border border-outline-variant/20">
+<button class="px-6 py-2 rounded-full text-sm font-medium bg-surface-container-highest text-primary shadow-sm">Today</button>
+<button class="px-6 py-2 rounded-full text-sm font-medium text-on-surface-variant hover:bg-surface-container-highest transition-colors">Week</button>
+<button class="px-6 py-2 rounded-full text-sm font-medium text-on-surface-variant hover:bg-surface-container-highest transition-colors">Month</button>
+</div>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_50px_rgba(118,46,0,0.05)] border-l-4 border-primary">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="payments">payments</span>
+<span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded">+12.4%</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium uppercase tracking-widest mb-1">Total Sales</p>
+<h2 class="text-3xl font-bold text-primary font-headline tracking-tighter">$42,890.50</h2>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_50px_rgba(118,46,0,0.05)]">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-tertiary" data-icon="shopping_bag">shopping_bag</span>
+<span class="text-xs font-bold text-primary bg-primary-fixed px-2 py-1 rounded">8 New</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium uppercase tracking-widest mb-1">Orders Today</p>
+<h2 class="text-3xl font-bold text-tertiary font-headline tracking-tighter">158</h2>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_50px_rgba(118,46,0,0.05)]">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-outline" data-icon="group">group</span>
+<span class="text-xs font-bold text-stone-500 bg-stone-100 px-2 py-1 rounded">Live</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium uppercase tracking-widest mb-1">Active Users</p>
+<h2 class="text-3xl font-bold text-on-surface font-headline tracking-tighter">1,240</h2>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<section class="lg:col-span-8 space-y-8">
+<div class="bg-surface-container-low p-8 rounded-2xl">
+<div class="flex justify-between items-center mb-10">
+<h3 class="text-xl font-bold italic tracking-tight">Sales Performance Velocity</h3>
+<div class="flex items-center gap-2 text-xs font-medium text-on-surface-variant">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span> Revenue
+                            <span class="w-3 h-3 rounded-full bg-tertiary ml-4"></span> Forecast
+                        </div>
+</div>
+<div class="h-64 flex items-end justify-between gap-4 px-4">
+<div class="w-full bg-surface-container-highest rounded-t-lg relative group h-[40%]">
+<div class="absolute inset-0 bg-primary-container rounded-t-lg opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[10px] uppercase font-bold text-stone-400">Mon</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-t-lg relative group h-[65%]">
+<div class="absolute inset-0 bg-primary-container rounded-t-lg opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[10px] uppercase font-bold text-stone-400">Tue</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-t-lg relative group h-[55%]">
+<div class="absolute inset-0 bg-primary-container rounded-t-lg opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[10px] uppercase font-bold text-stone-400">Wed</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-t-lg relative group h-[90%]">
+<div class="absolute inset-0 bg-primary-container rounded-t-lg opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[10px] uppercase font-bold text-stone-400">Thu</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-t-lg relative group h-[75%]">
+<div class="absolute inset-0 bg-primary-container rounded-t-lg opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[10px] uppercase font-bold text-stone-400">Fri</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-t-lg relative group h-[45%]">
+<div class="absolute inset-0 bg-primary-container rounded-t-lg opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[10px] uppercase font-bold text-stone-400">Sat</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-t-lg relative group h-[85%]">
+<div class="absolute inset-0 bg-primary-container rounded-t-lg opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[10px] uppercase font-bold text-stone-400">Sun</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-2xl overflow-hidden p-8">
+<h3 class="text-xl font-bold italic tracking-tight mb-8">Celestial Top Performers</h3>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl group hover:shadow-lg transition-shadow">
+<div class="flex items-center gap-4">
+<img alt="Divine Glazed Donuts" class="w-16 h-16 rounded-lg object-cover" data-alt="Close-up of artisan glazed donuts with shimmering gold leaf details and edible flowers on a ceramic plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgN9JmR8wo4utDUVm3iYYmxq3EbBS4I6S5DXiZYBNsom2eFkdtK9RBh7eKDPPKxqpo4VdbtFqn6hJIaJevIZSPdwYWLstIgfvFMr4sS6o_0BwvPX5LS9WMBxEB3Hn4Br6_e9MAAg4uGcC0s2Hy-y62kkjey-79UkaOCYeuq4pwPTSjP-qVZmqqQs_vDKbVx_xuTb4v_g2lZsvQwElVGOc4XKJ92LHKqADVobWdzFyJ2HwY7uJ4bC-7nM_ft3Jy1Q7h_8WzG38uEX-y"/>
+<div>
+<h4 class="font-bold text-primary italic">Divine Glazed Donuts</h4>
+<p class="text-xs text-on-surface-variant font-medium uppercase tracking-tighter">Pastry Sanctuary • 1,204 Sales</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold font-headline">$14,448.00</p>
+<p class="text-[10px] font-bold text-green-600 uppercase">Trending Top</p>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl group hover:shadow-lg transition-shadow">
+<div class="flex items-center gap-4">
+<img alt="Sacred Olive Oil" class="w-16 h-16 rounded-lg object-cover" data-alt="Elegant glass bottle of premium olive oil standing on a rustic stone table in warm afternoon sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNn5qH1Cc3o5jZYwLe0iNFJHmyHqCzUrfn-adYnTIBaugzRDEgWzj5vHioRyZUZXH3ECB6KRAhFK3GCPv0EWgr3qCxuv3JQbe99y-aO2qA5SpL9djhzG0MB2B5nDqOe74qaV8jON1avojOEdlhyyKoYrZW54FEtR1fDDhozxdjB_kMJVw_jfdw5djX7ASKcSaMkUleP00KNO1QXGXSbHF57hn0Obzu4AHCfTrAileMbQCaQYZ6A-yNjtiGO8zm2qqVTK-2GvXxqCFs"/>
+<div>
+<h4 class="font-bold text-primary italic">Cold-Pressed Sacred Essence</h4>
+<p class="text-xs text-on-surface-variant font-medium uppercase tracking-tighter">Estate Reserve • 842 Sales</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold font-headline">$21,050.00</p>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase">Stable Growth</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="lg:col-span-4 space-y-8">
+<div class="bg-surface-container-high p-8 rounded-2xl border border-outline-variant/10">
+<h3 class="text-lg font-bold italic tracking-tight mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="history">history</span>
+                        Recent Activity
+                    </h3>
+<div class="space-y-8 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[1px] before:bg-outline-variant/30">
+<div class="relative pl-8">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-primary-container flex items-center justify-center ring-4 ring-surface-container-high">
+<span class="material-symbols-outlined text-white text-[14px]" data-icon="shopping_cart">shopping_cart</span>
+</div>
+<p class="text-xs font-bold text-primary uppercase tracking-widest">New Order #8922</p>
+<p class="text-sm text-on-surface font-medium mt-1">Celestial Hamper for Marcus A.</p>
+<p class="text-[10px] text-stone-500 mt-1 italic">4 minutes ago</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-error flex items-center justify-center ring-4 ring-surface-container-high">
+<span class="material-symbols-outlined text-white text-[14px]" data-icon="warning" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<p class="text-xs font-bold text-error uppercase tracking-widest">Stock Alert</p>
+<p class="text-sm text-on-surface font-medium mt-1">'Divine Glazed Donuts' low on stock (2 left).</p>
+<p class="text-[10px] text-stone-500 mt-1 italic">18 minutes ago</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-tertiary flex items-center justify-center ring-4 ring-surface-container-high">
+<span class="material-symbols-outlined text-white text-[14px]" data-icon="person_add">person_add</span>
+</div>
+<p class="text-xs font-bold text-tertiary uppercase tracking-widest">New Disciple</p>
+<p class="text-sm text-on-surface font-medium mt-1">Elena Rostova just registered an account.</p>
+<p class="text-[10px] text-stone-500 mt-1 italic">1 hour ago</p>
+</div>
+</div>
+<button class="w-full mt-10 py-3 rounded-full text-xs font-bold uppercase tracking-widest border border-primary text-primary hover:bg-primary hover:text-white transition-all">View All Logs</button>
+</div>
+<div class="bg-primary-container p-8 rounded-2xl text-on-primary-container shadow-xl">
+<p class="text-[10px] uppercase tracking-widest font-bold opacity-70 mb-2">Editorial Quote</p>
+<p class="font-headline italic text-2xl leading-snug">"Data is the clay from which we sculpt the future of grace and abundance."</p>
+<div class="mt-6 flex items-center gap-3">
+<div class="w-8 h-[1px] bg-on-primary-container opacity-50"></div>
+<p class="text-xs font-medium tracking-widest uppercase">The Curator's Ledger</p>
+</div>
+</div>
+</section>
+</div>
+<footer class="mt-20 pt-10 border-t border-stone-200/50 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest font-bold text-stone-400 gap-4">
+<p>© 2024 Destiny4Divine Global Presence</p>
+<div class="flex gap-8">
+<a class="hover:text-primary transition-colors" href="#">Documentation</a>
+<a class="hover:text-primary transition-colors" href="#">Support Portal</a>
+<a class="hover:text-primary transition-colors" href="#">Privacy Sanctum</a>
+</div>
+</footer>
+</main>
+</body></html>

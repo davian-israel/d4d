@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Category Vault | Destiny4Divine</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#e8e1da",
+                        "tertiary": "#544132",
+                        "inverse-surface": "#33302b",
+                        "tertiary-fixed": "#fbddc8",
+                        "on-primary-fixed": "#351000",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#fbdccf",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#e8e1da",
+                        "secondary-container": "#f8d9cc",
+                        "tertiary-container": "#6d5848",
+                        "surface-bright": "#fff8f1",
+                        "outline": "#8a7268",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1e1b17",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-tertiary-fixed": "#27180c",
+                        "on-background": "#1e1b17",
+                        "error-container": "#ffdad6",
+                        "secondary": "#705950",
+                        "on-surface-variant": "#564239",
+                        "inverse-primary": "#ffb693",
+                        "surface-container-low": "#faf2ea",
+                        "inverse-on-surface": "#f7f0e8",
+                        "on-primary-container": "#ffc9b0",
+                        "primary-fixed": "#ffdbcc",
+                        "on-error": "#ffffff",
+                        "background": "#fff8f1",
+                        "tertiary-fixed-dim": "#ddc1ad",
+                        "surface-tint": "#9f4103",
+                        "primary-container": "#9c3f00",
+                        "outline-variant": "#ddc1b4",
+                        "primary": "#762e00",
+                        "on-tertiary-container": "#ecd0bb",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#564334",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "surface-container-high": "#eee7df",
+                        "surface-container": "#f4ede5",
+                        "surface": "#fff8f1",
+                        "on-secondary-fixed-variant": "#574239",
+                        "on-secondary-container": "#755e54",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#e0d9d1",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#dec0b4",
+                        "on-secondary-fixed": "#281810"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Work Sans"],
+                        "label": ["Work Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-gradient {
+            background: linear-gradient(135deg, #762E00 0%, #9C3F00 100%);
+        }
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 248, 241, 0.8);
+        }
+        body {
+            background-color: #fff8f1;
+            color: #1e1b17;
+            font-family: 'Work Sans', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen pb-24 md:pb-0 md:pl-72">
+<!-- Navigation Drawer (Desktop) -->
+<aside class="fixed inset-y-0 left-0 z-[60] py-10 flex flex-col h-full w-72 rounded-r-3xl bg-[#E8E1DA] shadow-2xl hidden md:flex">
+<div class="px-6 mb-8">
+<h2 class="font-serif italic text-[#762E00] text-2xl tracking-tighter">Admin Console</h2>
+</div>
+<nav class="space-y-2 px-4 flex-1">
+<a class="flex items-center gap-4 px-4 py-3 text-stone-600 hover:bg-stone-200/50 rounded-xl transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-stone-600 hover:bg-stone-200/50 rounded-xl transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-body">Products</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 bg-[#9C3F00] text-white rounded-xl shadow-lg transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="font-body">Categories</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-stone-600 hover:bg-stone-200/50 rounded-xl transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-body">Sales</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-stone-600 hover:bg-stone-200/50 rounded-xl transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body">Settings</span>
+</a>
+</nav>
+</aside>
+<!-- Top App Bar -->
+<header class="fixed top-0 right-0 left-0 md:left-72 z-50 bg-[#FFF8F1]/90 backdrop-blur-xl flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-[#762E00] material-symbols-outlined">menu</button>
+<h1 class="font-serif italic text-2xl tracking-tighter text-[#762E00]">Destiny4Divine</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#762E00]">shopping_bag</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a creative director in a minimalist studio setting with warm natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqlhh8GUdKFDifnUFZ3IXgElCPkC6W1N3fL1pAUSpjmcZ1GJRYlUujTAW4ztdxUVzBZhMsyAF2Uk-0NtcwQhBlj4j1kHOe6OpAcspNQn0Z5QYl3CfLLeOnWE2LEi5M1UOgmrkl0O18TqqR0z57NSRgmUDyAxOAit4bZa-2HPevzE8z0CPdo-epnNMatutAqvkv86FotnPyqqX3XVbrW0fzGFd0vhWSKBiJMRmIwWZoYTE8Ybu5utE3uiQtl2veQXzoFcPKjFglHRJv"/>
+</div>
+</div>
+</header>
+<main class="pt-24 px-6 md:px-12 max-w-7xl mx-auto space-y-12 pb-20">
+<!-- Hero & Action Section -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-outline-variant/20 pb-8">
+<div class="space-y-2">
+<p class="text-primary font-body uppercase tracking-[0.2em] text-xs font-semibold">Inventory Management</p>
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface">Category Vault</h2>
+<p class="text-on-surface-variant font-body max-w-md">Organize your sacred collections through curated taxonomies and inventory flow control.</p>
+</div>
+<button class="editorial-gradient text-on-primary px-8 py-4 rounded-full flex items-center gap-3 shadow-xl self-start md:self-auto hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add</span>
+<span class="font-body font-medium">Add New Category</span>
+</button>
+</section>
+<!-- Insights Grid (Bento Style) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Inventory Distribution Chart -->
+<div class="lg:col-span-2 bg-surface-container-low rounded-[2rem] p-8 space-y-6">
+<div class="flex justify-between items-center">
+<h3 class="font-headline text-2xl text-on-surface">Inventory Distribution</h3>
+<span class="material-symbols-outlined text-outline">analytics</span>
+</div>
+<div class="flex items-end justify-between h-48 gap-4 px-4">
+<div class="w-full bg-primary/20 rounded-t-xl relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-xl h-[70%] transition-all group-hover:h-[75%]"></div>
+<span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[10px] font-label uppercase tracking-wider text-stone-500">T-Shirts</span>
+</div>
+<div class="w-full bg-primary/20 rounded-t-xl relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-xl h-[45%] transition-all group-hover:h-[50%]"></div>
+<span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[10px] font-label uppercase tracking-wider text-stone-500">Hoodies</span>
+</div>
+<div class="w-full bg-primary/20 rounded-t-xl relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-xl h-[90%] transition-all group-hover:h-[95%]"></div>
+<span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[10px] font-label uppercase tracking-wider text-stone-500">Drinkware</span>
+</div>
+<div class="w-full bg-primary/20 rounded-t-xl relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-xl h-[30%] transition-all group-hover:h-[35%]"></div>
+<span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[10px] font-label uppercase tracking-wider text-stone-500">Totes</span>
+</div>
+</div>
+<div class="pt-8 flex gap-8">
+<div>
+<p class="text-xs font-label uppercase text-stone-500 tracking-widest">Total SKU Count</p>
+<p class="text-3xl font-headline text-primary">1,284</p>
+</div>
+<div>
+<p class="text-xs font-label uppercase text-stone-500 tracking-widest">Vault Capacity</p>
+<p class="text-3xl font-headline text-primary">82%</p>
+</div>
+</div>
+</div>
+<!-- Activity Pulse Feed -->
+<div class="bg-surface-container-high rounded-[2rem] p-8 space-y-6">
+<h3 class="font-headline text-2xl text-on-surface">Activity Pulse</h3>
+<div class="space-y-6 overflow-y-auto max-h-72 pr-2">
+<div class="flex gap-4 items-start">
+<div class="w-2 h-2 rounded-full bg-primary mt-2"></div>
+<div>
+<p class="text-sm font-medium text-on-surface">T-Shirts category updated</p>
+<p class="text-xs text-stone-500">2 minutes ago • Admin</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-2 h-2 rounded-full bg-secondary mt-2"></div>
+<div>
+<p class="text-sm font-medium text-on-surface">New batch in Drinkware</p>
+<p class="text-xs text-stone-500">45 minutes ago • System</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-2 h-2 rounded-full bg-primary mt-2"></div>
+<div>
+<p class="text-sm font-medium text-on-surface">Autumn Hoodies collection live</p>
+<p class="text-xs text-stone-500">3 hours ago • Sarah M.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-2 h-2 rounded-full bg-stone-300 mt-2"></div>
+<div>
+<p class="text-sm font-medium text-on-surface">Archived 'Summer Totes'</p>
+<p class="text-xs text-stone-500">Yesterday • Admin</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Categories Gallery -->
+<section class="space-y-8">
+<div class="flex items-center justify-between">
+<h3 class="font-headline text-3xl text-on-surface">The Collections</h3>
+<div class="flex gap-2">
+<button class="p-2 rounded-full bg-surface-container-low text-primary material-symbols-outlined">filter_list</button>
+<button class="p-2 rounded-full bg-surface-container-low text-primary material-symbols-outlined">search</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- T-Shirts -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-highest aspect-[3/4] mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="minimalist white cotton t-shirt hanging on a wooden rack against a warm clay-colored wall with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVW-k6nDazBBf6fXWE-85XKeuGmwhaYNn7jCccb5SF-BijWoOIgZtERnpekMTzkEhW0V2dRfLcKx2_da9c2mx2TG9_z5piqV09ZjNGKkIDd74J9laP_UnSmSJQhYG-2rzEmb-Hu_o0lDNnd6ai3niNGIPi-bPF9MC2px_bI-w3_b-REUgzTodj0Gw_LvY-wmohlBZc_IzkNwf6RgFqXMy8ejeYbkP6-_5RCME--c68VKwg-Spkp5M5v0r5E0ggyIaj2LXVExL8cWUs"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute top-4 right-4 bg-[#FFF8F1]/80 backdrop-blur px-3 py-1 rounded-full text-[10px] font-label font-bold uppercase tracking-widest text-[#762E00]">420 Items</div>
+</div>
+<div class="space-y-1">
+<h4 class="font-headline text-xl text-on-surface">T-Shirts</h4>
+<p class="text-sm text-stone-500 font-body">Premium heavy-weight organic cotton staples.</p>
+</div>
+</div>
+<!-- Hoodies -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-highest aspect-[3/4] mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="close-up texture of a thick terracotta colored hoodie with minimalist embroidery in soft afternoon light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxZGjwDOX3SV4DZTXdRNYs2SLkF92e_9FfgaA0JGLGKaw0NcomovRd8-dL0KtsM3qBP9n6J35FCG_odN5N8LEipGQlss9isRLkkZVo19u0KhFWHSSlykG-lUbuFSjnXt7ysf4NbjqE2rqATBqDhkFhovrrDC_E-bt39DAaCMiJamSByMht5WB_PCpJl5cPCCRcEc9W02XqLKtvZYNXGK95y1GU3GI8mBUfmP-lpxC5UOWSgDDfrTgaq-q69b_cOjYvQmRdydatZ4wQ"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute top-4 right-4 bg-[#FFF8F1]/80 backdrop-blur px-3 py-1 rounded-full text-[10px] font-label font-bold uppercase tracking-widest text-[#762E00]">185 Items</div>
+</div>
+<div class="space-y-1">
+<h4 class="font-headline text-xl text-on-surface">Hoodies</h4>
+<p class="text-sm text-stone-500 font-body">Comfort silhouettes for mindful living.</p>
+</div>
+</div>
+<!-- Drinkware -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-highest aspect-[3/4] mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="artisan ceramic mug with matte earth-tone glaze sitting on a rustic stone surface with steam rising" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6_ysL4ZAApMpXts9Uw3-a3RKtNXxclkoknYMXdDwb63Mgc9qfK806AFqFV_yHvrnilvQJuUivqgMNy1ecb6uTWEkP3ysJV73dTmw3HGDObi7ZgQZL2XSZgHErHR4VzAICqHJGNPmIHIwtxxzUpALVdmAhpOw-jJM2zb3GQtXZNAbYMF1BBwjaXp_POAN-DJEu-L3_LNwwcO8dr2oqb-rQFxo4xkRJ7GGZDormjllH2SmShegwVw20DkVtCfg4rfXoZiUkvgOL4ydr"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute top-4 right-4 bg-[#FFF8F1]/80 backdrop-blur px-3 py-1 rounded-full text-[10px] font-label font-bold uppercase tracking-widest text-[#762E00]">512 Items</div>
+</div>
+<div class="space-y-1">
+<h4 class="font-headline text-xl text-on-surface">Drinkware</h4>
+<p class="text-sm text-stone-500 font-body">Vessels designed for sacred rituals.</p>
+</div>
+</div>
+<!-- Tote Bags -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-highest aspect-[3/4] mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="canvas tote bag with elegant typography hanging on a weathered wooden peg against a cream wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtWt8aMn5q42L-pwUl8Q0EzuCZKnu5UXWEJb4jgKNfVej_892otGFGs7sEv9ZEGhWXHC__nH5hQ0mV29PwOsMFGK-adbwe_XrD80rTh_DrlT0nkcBrypX7CCEsJNC0UMPqMiu35ehdpC4gazwSF21hSSNYzYf3DBGm6NDNipShRvmTEH2X_TRsFJWlFt575lavJwQ4LqPmNy0lHamz4_VFqPqkt6n7mc09U1UHf0nxyKkw_lbUq5SbgnPo6LekF1ftAIqbeFKyE1Y2"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute top-4 right-4 bg-[#FFF8F1]/80 backdrop-blur px-3 py-1 rounded-full text-[10px] font-label font-bold uppercase tracking-widest text-[#762E00]">167 Items</div>
+</div>
+<div class="space-y-1">
+<h4 class="font-headline text-xl text-on-surface">Tote Bags</h4>
+<p class="text-sm text-stone-500 font-body">Sustainable carriers for earthly travels.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Quote Section -->
+<section class="relative py-20 px-8 rounded-[3rem] overflow-hidden text-center bg-secondary-container/30">
+<div class="absolute inset-0 opacity-10">
+<img class="w-full h-full object-cover" data-alt="abstract macro photography of cracked desert earth with deep textures and warm shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd083VokMGuJvL5CsH9TavIcZoMPt0JouwS8_kFIg5UeDBygh8jbg4lSymBEM2AUnjuR1esyiCpXZAXZwEIzN10HTz2ZRitfBjAHfJNa22C4Bhe4bvY8iuqnmUYUMGdtgE0e3xLzimoD2hHpx9yoG02vGtsuad4lE79C9UFulS5AT4KaV7XRm8is__N9hq7rUU8Sl2MNKT3YaLIf7hSYryuseL4rSVRE9tOMSNY-y6TFUI5pPRLmpsWb81dos0Z1afYcMXFwqvG7RE"/>
+</div>
+<div class="relative z-10 max-w-2xl mx-auto space-y-6">
+<span class="material-symbols-outlined text-primary text-4xl">auto_awesome</span>
+<h2 class="font-headline text-2xl md:text-3xl italic text-primary leading-relaxed">
+                    "Every category is a chapter, every product a verse in the story of our divine journey."
+                </h2>
+<div class="h-px w-20 bg-primary mx-auto opacity-30"></div>
+<p class="font-body text-xs uppercase tracking-[0.3em] text-on-secondary-container font-semibold">The Destiny Manifesto</p>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-[#FFF8F1]/80 backdrop-blur-2xl flex justify-around items-center px-4 pb-6 pt-3 shadow-[0_-10px_40px_rgba(118,46,0,0.05)] border-t border-stone-200/10">
+<a class="flex flex-col items-center justify-center text-stone-400 opacity-60" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#762E00] scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium">Catalog</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 opacity-60" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 opacity-60" href="#">
+<span class="material-symbols-outlined">person_outline</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium">Profile</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 opacity-60" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium">Contact</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,38 @@
+# Destiny / stitch workspace
+
+# Dependencies & JS builds
+**/node_modules/
+**/.pnp
+**/.pnp.*
+**/.next/
+**/out/
+**/dist/
+**/.turbo/
+*.tsbuildinfo
+
+# Environment (keep examples)
+**/.env
+**/.env.*
+!**/.env.example
+!web/.env.example
+
+# Vercel
+**/.vercel/
+
+# Playwright / coverage (web)
+web/test-results/
+web/playwright-report/
+web/blob-report/
+web/coverage/
+
+# IDE / tooling
+.cursor/
+**/*.pem
+
+# Preserved nested `web/` git dir (local only; do not version)
+web/.git.backup-web-pre-monorepo/
+
+
+# OS
+.DS_Store
+Thumbs.db

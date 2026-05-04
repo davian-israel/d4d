@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Destiny4Divine | Manage Products</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#e8e1da",
+              "tertiary": "#544132",
+              "inverse-surface": "#33302b",
+              "tertiary-fixed": "#fbddc8",
+              "on-primary-fixed": "#351000",
+              "on-secondary": "#ffffff",
+              "secondary-fixed": "#fbdccf",
+              "on-primary": "#ffffff",
+              "surface-variant": "#e8e1da",
+              "secondary-container": "#f8d9cc",
+              "tertiary-container": "#6d5848",
+              "surface-bright": "#fff8f1",
+              "outline": "#8a7268",
+              "on-tertiary": "#ffffff",
+              "on-surface": "#1e1b17",
+              "primary-fixed-dim": "#ffb693",
+              "on-tertiary-fixed": "#27180c",
+              "on-background": "#1e1b17",
+              "error-container": "#ffdad6",
+              "secondary": "#705950",
+              "on-surface-variant": "#564239",
+              "inverse-primary": "#ffb693",
+              "surface-container-low": "#faf2ea",
+              "inverse-on-surface": "#f7f0e8",
+              "on-primary-container": "#ffc9b0",
+              "primary-fixed": "#ffdbcc",
+              "on-error": "#ffffff",
+              "background": "#fff8f1",
+              "tertiary-fixed-dim": "#ddc1ad",
+              "surface-tint": "#9f4103",
+              "primary-container": "#9c3f00",
+              "outline-variant": "#ddc1b4",
+              "primary": "#762e00",
+              "on-tertiary-container": "#ecd0bb",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#564334",
+              "on-primary-fixed-variant": "#7a3000",
+              "surface-container-high": "#eee7df",
+              "surface-container": "#f4ede5",
+              "surface": "#fff8f1",
+              "on-secondary-fixed-variant": "#574239",
+              "on-secondary-container": "#755e54",
+              "on-error-container": "#93000a",
+              "surface-dim": "#e0d9d1",
+              "error": "#ba1a1a",
+              "secondary-fixed-dim": "#dec0b4",
+              "on-secondary-fixed": "#281810"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Work Sans"],
+              "label": ["Work Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 32px 64px -12px rgba(30, 27, 23, 0.05);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #fff8f1; }
+        ::-webkit-scrollbar-thumb { background: #ddc1b4; border-radius: 10px; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Sidebar Navigation Drawer (Desktop) -->
+<aside class="hidden md:flex fixed inset-y-0 left-0 z-[60] py-10 flex-col h-full w-72 rounded-r-3xl bg-[#E8E1DA] dark:bg-stone-900 shadow-2xl dark:shadow-none space-y-2 px-4">
+<div class="font-serif text-xl mb-8 px-6 italic text-[#762E00] dark:text-[#E8E1DA]">
+            Admin Console
+        </div>
+<nav class="flex flex-col space-y-2">
+<a class="flex items-center gap-4 px-6 py-3 text-stone-600 dark:text-stone-400 hover:bg-stone-200/50 dark:hover:bg-stone-800 rounded-xl hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 bg-[#9C3F00] text-white rounded-xl shadow-lg hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-medium">Products</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-stone-600 dark:text-stone-400 hover:bg-stone-200/50 dark:hover:bg-stone-800 rounded-xl hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="font-medium">Categories</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-stone-600 dark:text-stone-400 hover:bg-stone-200/50 dark:hover:bg-stone-800 rounded-xl hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-medium">Sales</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-stone-600 dark:text-stone-400 hover:bg-stone-200/50 dark:hover:bg-stone-800 rounded-xl hover:translate-x-1 transition-transform mt-auto" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+</nav>
+</aside>
+<main class="md:ml-72 min-h-screen pb-24 md:pb-12">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 bg-[#FFF8F1]/90 backdrop-blur-xl dark:bg-stone-950/90 flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-[#762E00] hover:bg-stone-100/50 transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-serif italic text-2xl tracking-tighter text-[#762E00] dark:text-[#9C3F00]">Destiny4Divine</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#762E00] hover:bg-stone-100/50 transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+</header>
+<!-- Product Management Canvas -->
+<section class="max-w-7xl mx-auto px-6 pt-10">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<span class="font-label text-xs uppercase tracking-[0.2em] text-outline mb-2 block">Curation Hub</span>
+<h2 class="font-headline text-4xl text-primary font-bold tracking-tight">Product Inventory</h2>
+<p class="text-secondary mt-2">Managing 128 artisan creations in your collection.</p>
+</div>
+<div class="flex flex-wrap gap-3">
+<div class="relative min-w-[280px]">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-lowest border-none border-b border-outline-variant/20 focus:ring-0 focus:border-primary transition-all rounded-xl editorial-shadow placeholder:text-outline/50" placeholder="Search inventory..." type="text"/>
+</div>
+<button class="flex items-center gap-2 px-5 py-3 bg-surface-container-high text-on-surface rounded-xl hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+<span class="font-medium text-sm">Filters</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-3 bg-surface-container-high text-on-surface rounded-xl hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-sm">swap_vert</span>
+<span class="font-medium text-sm">Sort</span>
+</button>
+</div>
+</div>
+<!-- Bento-Inspired Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<!-- Product Card 1 -->
+<div class="group flex flex-col bg-surface-container-low rounded-xl overflow-hidden hover:translate-y-[-4px] transition-all duration-300">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container-highest relative">
+<img alt="Artisan Harvest Salad" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Close-up of a vibrant artisan harvest salad with heirloom tomatoes and fresh greens on a ceramic plate, warm afternoon lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAW7_sID6pkupr-kagK-Q0VvghxCytxQmV0KExW7ixaEiT2nYfdTPvrk7t10_z9p_HcN05zroksMEEq3Pwogz8126b4qaPnNvVqdZ0v0t8rtF4QvbfWV9Y0mnpdn-BBFA0Vf5T1ZSNZ-7pT_gNqnaq3cTzOWkArV0cvKekckHjVTg4iIOFD8OxXkWU1VbXy2F1KK-cy88j00NBBAUHUMm7M_eiER6qn8dbVCiLxf_MI8cKro5fA5J9A5LfGMgrMxMY7oXRI2qNKLQW"/>
+<div class="absolute top-4 right-4 bg-surface-bright/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-primary">In Stock</div>
+</div>
+<div class="p-6">
+<p class="font-label text-[10px] tracking-widest text-outline uppercase mb-1">SKU: D4D-HS-001</p>
+<h3 class="font-headline text-xl text-on-surface mb-2 leading-tight">Artisan Harvest Salad</h3>
+<div class="flex items-baseline gap-2 mb-4">
+<span class="text-lg font-bold text-primary-container">$24.00</span>
+<span class="text-xs text-secondary italic">per unit</span>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+<span class="text-sm font-medium">84 units</span>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group flex flex-col bg-surface-container-low rounded-xl overflow-hidden hover:translate-y-[-4px] transition-all duration-300">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container-highest relative">
+<img alt="Midnight Cocoa Glaze" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Elegant dark chocolate glaze being poured over a gourmet cake, rich textures and moody studio lighting with golden highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPS-jC5ZMRugxRAKJsVXUVk9n2dCl2uiyBgnwFRHQZ_Pgm152wvUWGrE_v4syIo0Pt4q4vuPbe2v3I8ehLJaZJ18vHpeJM40fqXrIZzrFu_dNeUtrlbwMDhvN2dbNwSmNTrtiHaXGCSMECLBkz7yGD0gMSVa2QHubqyMG-NWd-pJOv8BwMZAf4u3bVEe7WErtig7tYdeSwww4b5xc4SgJn-C-Mlblr94OL5V0Iiz715SCRlPV34BcOd5Yw_5dAqbZy71D93pNAKm3Z"/>
+<div class="absolute top-4 right-4 bg-error-container/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-on-error-container">Low Stock</div>
+</div>
+<div class="p-6">
+<p class="font-label text-[10px] tracking-widest text-outline uppercase mb-1">SKU: D4D-MCG-42</p>
+<h3 class="font-headline text-xl text-on-surface mb-2 leading-tight">Midnight Cocoa Glaze</h3>
+<div class="flex items-baseline gap-2 mb-4">
+<span class="text-lg font-bold text-primary-container">$18.50</span>
+<span class="text-xs text-secondary italic">per unit</span>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+<span class="text-sm font-medium">12 units</span>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group flex flex-col bg-surface-container-low rounded-xl overflow-hidden hover:translate-y-[-4px] transition-all duration-300">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container-highest relative">
+<img alt="Ceremonial Matcha" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Close-up of fine ceremonial grade matcha powder in a stone bowl with a bamboo whisk, minimalist Japanese aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq8De3Qr69WbgfSQR8p--GNkyvXdTAilK4-e_r9o4ZGQyEkftqTMkYrgOoNMJajg-PNI2SZLcfbS0qR3CCGkL1_Hmqr2bljkNG65usTE0Acr8gKUKWwg8jjJ5TC9s49yFN5dNYxJCMUzvvqA1YCBDP3S_I96uymDV4g4_mPXsAFSNkvcyrWYJ74g4WA2vMwjRcT1OyrNtOJyzxKAhLM86P2zwm881Zj3vfNq_7AkUVJQus37PMkanfXSVwwBwF9_8oU7DSat-HYpJB"/>
+<div class="absolute top-4 right-4 bg-surface-bright/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-primary">In Stock</div>
+</div>
+<div class="p-6">
+<p class="font-label text-[10px] tracking-widest text-outline uppercase mb-1">SKU: D4D-CMT-11</p>
+<h3 class="font-headline text-xl text-on-surface mb-2 leading-tight">Ceremonial Matcha</h3>
+<div class="flex items-baseline gap-2 mb-4">
+<span class="text-lg font-bold text-primary-container">$45.00</span>
+<span class="text-xs text-secondary italic">per unit</span>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+<span class="text-sm font-medium">210 units</span>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group flex flex-col bg-surface-container-low rounded-xl overflow-hidden hover:translate-y-[-4px] transition-all duration-300">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container-highest relative">
+<img alt="Desert Rose Infusion" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Handcrafted herbal tea blend with dried rose petals and botanicals in a glass jar, ethereal desert lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB97afMgoTgwm-k2AmULyXznd2p0zuY4ACuu92RO_dP_UWK_EVCZfWCtfLYXHVoLe2QK59pb1cD3N0rJjtw5paX1pVmkqco-toQxCohPwIrgsdHhdwjhqK-36bLi9YTDbsie87cnH2YWyFZrzw6OmfBKWnPpmOpH1dP2u4B0rALZvwih-6zacK5WXzCrgX-1qYlfMkTEdIdfd1-VmTWwYBWJ8CRfoPVG-DT7OJD8FAQ7uH4BCL6-XHHAtbmW5ef4bZaSFT9Tt9vQ9j9"/>
+<div class="absolute top-4 right-4 bg-surface-bright/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-primary">In Stock</div>
+</div>
+<div class="p-6">
+<p class="font-label text-[10px] tracking-widest text-outline uppercase mb-1">SKU: D4D-DRI-09</p>
+<h3 class="font-headline text-xl text-on-surface mb-2 leading-tight">Desert Rose Infusion</h3>
+<div class="flex items-baseline gap-2 mb-4">
+<span class="text-lg font-bold text-primary-container">$16.00</span>
+<span class="text-xs text-secondary italic">per unit</span>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+<span class="text-sm font-medium">42 units</span>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 5 (Visual Variety) -->
+<div class="group flex flex-col bg-surface-container-low rounded-xl overflow-hidden hover:translate-y-[-4px] transition-all duration-300">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container-highest relative">
+<img alt="Truffle Infused Oil" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Clear glass bottle of golden oil with black truffle shavings at the bottom, placed on a rough stone surface with dramatic shadow play" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCrWH41lAfEAZCYG-NLNtyW6mf5kJYQ-FskbhoBL648PBTX5ItwvLyFABEseWOYILrpyLg6cDXpwTvfBU6Iz9DB2empN8JQyPZPuo_sACZtyRqXR2t6OcClxPYz0PVUfzjMxOGszWzsdi6RfqmwaFBCwoztwSSA8mjDbavOYILNNm_UJx72h1EtX9_Tg4Q5ETbEyT490airrXmwtHq1t5I701SzW3ZK7g07Lgp3_5MQVy1v3Lj8L61gfxUjl3TixXNDmG-hm6do4nS"/>
+<div class="absolute top-4 right-4 bg-surface-bright/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-primary">In Stock</div>
+</div>
+<div class="p-6">
+<p class="font-label text-[10px] tracking-widest text-outline uppercase mb-1">SKU: D4D-TIO-88</p>
+<h3 class="font-headline text-xl text-on-surface mb-2 leading-tight">Truffle Infused Oil</h3>
+<div class="flex items-baseline gap-2 mb-4">
+<span class="text-lg font-bold text-primary-container">$38.00</span>
+<span class="text-xs text-secondary italic">per unit</span>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+<span class="text-sm font-medium">56 units</span>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Add Product Placeholder -->
+<div class="border-2 border-dashed border-outline-variant/30 rounded-xl flex flex-col items-center justify-center p-8 bg-surface/50 group hover:border-primary/50 hover:bg-surface-container-low transition-all duration-300 cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<p class="mt-4 font-headline text-lg text-outline group-hover:text-primary transition-colors">Add New Product</p>
+<p class="text-xs text-outline/60 mt-2 text-center">Expand your artisan collection</p>
+</div>
+</div>
+<!-- Inventory Stats (Floating/Pinned) -->
+<div class="mt-20 p-8 rounded-3xl bg-tertiary-fixed text-on-tertiary-fixed-variant grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="space-y-1">
+<p class="font-label text-[10px] uppercase tracking-widest">Total Value</p>
+<p class="font-headline text-3xl font-bold">$124,500.00</p>
+</div>
+<div class="space-y-1">
+<p class="font-label text-[10px] uppercase tracking-widest">Global Stock</p>
+<p class="font-headline text-3xl font-bold">4,822 <span class="text-lg font-normal opacity-70">units</span></p>
+</div>
+<div class="space-y-1">
+<p class="font-label text-[10px] uppercase tracking-widest">Action Items</p>
+<p class="font-headline text-3xl font-bold text-primary">8 <span class="text-lg font-normal opacity-70">Low Stock</span></p>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-6 md:bottom-10 md:right-10 w-16 h-16 bg-gradient-to-tr from-primary to-primary-container text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<!-- Mobile Navigation Bar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#FFF8F1]/80 backdrop-blur-2xl border-t border-stone-200/10 shadow-[0_-10px_40px_rgba(118,46,0,0.05)]">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 opacity-60 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#762E00] dark:text-[#9C3F00] scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium">Catalog</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 opacity-60 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 opacity-60 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined">person_outline</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium">Profile</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 opacity-60 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium">Contact</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Manage Featured Products | The Sensory Gastronome</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed-variant": "#376430",
+                        "on-surface-variant": "#7f512e",
+                        "surface-variant": "#ffd4b9",
+                        "tertiary-container": "#fbb423",
+                        "on-secondary-fixed": "#1a4716",
+                        "background": "#fff4ef",
+                        "inverse-on-surface": "#c99169",
+                        "surface-bright": "#fff4ef",
+                        "on-tertiary": "#fff1df",
+                        "on-tertiary-container": "#523700",
+                        "on-tertiary-fixed": "#372400",
+                        "tertiary-fixed-dim": "#eba60f",
+                        "inverse-surface": "#1c0900",
+                        "on-background": "#4a2506",
+                        "primary-fixed": "#ff7a2f",
+                        "secondary-fixed-dim": "#abdf9e",
+                        "primary-container": "#ff7a2f",
+                        "surface-tint": "#9c3f00",
+                        "outline": "#9e6b47",
+                        "primary-fixed-dim": "#f66700",
+                        "tertiary-fixed": "#fbb423",
+                        "surface-container-lowest": "#ffffff",
+                        "error-dim": "#b92902",
+                        "secondary-container": "#b9eeab",
+                        "on-primary-fixed-variant": "#4f1c00",
+                        "surface-container-highest": "#ffd4b9",
+                        "tertiary": "#7a5400",
+                        "on-primary-fixed": "#000000",
+                        "on-surface": "#4a2506",
+                        "tertiary-dim": "#6b4900",
+                        "on-secondary-container": "#2d5a27",
+                        "error-container": "#f95630",
+                        "secondary": "#386631",
+                        "surface-container": "#ffe3d2",
+                        "surface": "#fff4ef",
+                        "secondary-fixed": "#b9eeab",
+                        "surface-container-high": "#ffdcc6",
+                        "on-error": "#ffefec",
+                        "surface-dim": "#ffc9a6",
+                        "outline-variant": "#dba078",
+                        "on-primary": "#fff0ea",
+                        "on-primary-container": "#401500",
+                        "surface-container-low": "#ffede4",
+                        "on-error-container": "#520c00",
+                        "inverse-primary": "#fe6b00",
+                        "primary": "#9c3f00",
+                        "primary-dim": "#893600",
+                        "error": "#b02500",
+                        "on-secondary": "#d2ffc4",
+                        "secondary-dim": "#2d5927",
+                        "on-tertiary-fixed-variant": "#5e4000"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fff4ef;
+        }
+        .editorial-shadow {
+            box-shadow: 0 24px 40px -10px rgba(74, 37, 6, 0.06);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background antialiased overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-orange-50/80 backdrop-blur-xl shadow-sm flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="text-orange-900 active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-orange-900 font-extrabold italic font-plus-jakarta text-lg tracking-tight">The Sensory Gastronome</h1>
+</div>
+<div class="flex items-center gap-6">
+<!-- Web Navigation Cluster -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-stone-500 hover:text-orange-700 transition-colors font-semibold uppercase tracking-widest text-[11px]" href="#">Home</a>
+<a class="text-stone-500 hover:text-orange-700 transition-colors font-semibold uppercase tracking-widest text-[11px]" href="#">Shop</a>
+<a class="text-stone-500 hover:text-orange-700 transition-colors font-semibold uppercase tracking-widest text-[11px]" href="#">Cart</a>
+<a class="text-orange-900 font-bold uppercase tracking-widest text-[11px]" href="#">Admin</a>
+</nav>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border-2 border-white">
+<img alt="Admin Profile" class="w-full h-full object-cover" data-alt="professional portrait of a creative director in a minimalist studio setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt8jV_rLMv4IBR-3WItQXZgWObOSvX3Vmig8pbREtxSYEN53rsydnnQx2DZZ1DpnvCiv07ExULrzsv6wxspI5LioE-whc_83cHMCvgfuto4sf6btaKU_V_f-OL2Yd8JPphqLK0ajCo0jiIBLBN2Iq-7vXYYdLbESNMjzBcV3Ku8GeirVtJSv9ApkFU8qJkc1UWzwFjIk0A90UOeE7TMpMna1yR910hZ_IklSA_5fvLGZ0PYPNUkzASrztLiNo17QZb5Opa0mNRb9dk"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto min-h-screen">
+<!-- Dashboard Header -->
+<section class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="text-secondary font-bold tracking-[0.2em] uppercase text-xs mb-2 block">Curation Console</span>
+<h2 class="text-5xl font-extrabold text-primary tracking-tighter leading-none">Manage Featured Products</h2>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 rounded-full font-bold editorial-shadow active:scale-95 transition-transform flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="add_circle" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+                    Add New Showcase
+                </button>
+</div>
+</section>
+<!-- Search & Filter Bar -->
+<section class="mb-10 flex flex-col lg:flex-row gap-4 items-center">
+<div class="relative w-full lg:flex-1">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full pl-12 pr-6 py-4 bg-surface-container-highest border-none rounded-sm focus:ring-2 focus:ring-primary/40 placeholder:text-on-surface-variant/60" placeholder="Search by name or SKU..." type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-2 w-full lg:w-auto">
+<button class="bg-secondary text-on-secondary px-6 py-2 rounded-full whitespace-nowrap font-semibold">All Categories</button>
+<button class="bg-surface-container-high text-on-surface-variant px-6 py-2 rounded-full whitespace-nowrap font-semibold hover:bg-orange-100 transition-colors">Fresh Harvest</button>
+<button class="bg-surface-container-high text-on-surface-variant px-6 py-2 rounded-full whitespace-nowrap font-semibold hover:bg-orange-100 transition-colors">Artisan Pantry</button>
+<button class="bg-surface-container-high text-on-surface-variant px-6 py-2 rounded-full whitespace-nowrap font-semibold hover:bg-orange-100 transition-colors">Chef's Reserve</button>
+</div>
+</section>
+<!-- Featured Products Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Product Item 1: Large Editorial Layout -->
+<div class="lg:col-span-2 bg-surface-container-low rounded-lg p-8 relative overflow-hidden group">
+<div class="flex flex-col md:flex-row gap-8 relative z-10">
+<div class="w-full md:w-1/2 -mt-12 md:-ml-12 drop-shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
+<img class="rounded-lg w-full aspect-square object-cover" data-alt="ultra close-up of organic heritage carrots with vibrant orange and purple hues and fresh green tops on a rustic linen cloth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkDOwOMh6b7DWm8ocYDcL9GZHH8-2HL4A55QXHRQjeymYcFMaRzPP7wTfLrsCagc9OZg6QAtkaOV5zGSQKa4IwzChsCUeJT6wuXSZnBMa72opeAS0nLuIC4nHir_eCL_ph-YpzpUV2XyekRrB_oYqZK5bV8amLoTrUZXftvEWSumKBT7pPbmOrFFPWq04CGUiBOs6ITAl5vy2eN3YIBIRbyF0t33ziUNh6e8XhDE2ri4BC7-Tz_7yfale19h--03iPdZ6OQtAY_jCJ"/>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<span class="text-outline text-xs font-bold tracking-widest uppercase mb-1">SKU: HRV-2024-CRRT</span>
+<h3 class="text-3xl font-bold text-on-background mb-4 leading-tight">Heritage Midnight Carrots</h3>
+<p class="text-on-surface-variant mb-6 line-clamp-2">Hand-picked heirloom varieties from our northern garden, offering an earthy sweetness and unmatched crispness.</p>
+<div class="flex items-center gap-3">
+<button class="bg-secondary-container text-on-secondary-container px-6 py-3 rounded-md font-bold flex items-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span> Edit Listing
+                            </button>
+<button class="w-12 h-12 flex items-center justify-center text-error hover:bg-error/10 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors cursor-move">
+<span class="material-symbols-outlined" data-icon="drag_indicator">drag_indicator</span>
+</button>
+</div>
+</div>
+</div>
+<div class="absolute top-4 right-4 bg-primary text-on-primary text-[10px] font-black uppercase px-3 py-1 rounded-full tracking-tighter">Spotlight #1</div>
+</div>
+<!-- Product Item 2: Vertical Card -->
+<div class="bg-surface-container-lowest rounded-lg p-6 flex flex-col editorial-shadow">
+<div class="relative mb-6">
+<img class="w-full aspect-[4/3] object-cover rounded-lg" data-alt="artisan truffle infused olive oil bottle with a minimalist gold label on a dark textured slate background with soft warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY48iHKza2A-Yk20G5-C8PjP_W5oOjWIx7zWpsqPm8Xh2AFKqukqe3RVNnVM12I0qQB4vFMhxZdsy3zoCEvLdLIgTIRAmAR6YBDoDXV6n8t0gMQyplDBWkXJo_mwcxbmh0PUzyztB8rKqru7rQxMgqxSrUJY3Gkvz1T1TX6lpD2F6MaPNd6gTLs6zzRbupHFXAiPcSmk3JEVY8QMvv1gBg62GNpaSM8YuYudDgwzUkOrrps9MtLG6z_J1SJBgBjeOwqNvImf1JISmJ"/>
+<div class="absolute -bottom-4 -right-4 bg-tertiary text-on-tertiary w-12 h-12 rounded-full flex items-center justify-center editorial-shadow">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<span class="text-outline text-xs font-bold tracking-widest uppercase">SKU: OIL-TRF-009</span>
+<h3 class="text-xl font-bold text-on-background mt-1 mb-4">White Truffle Elixir</h3>
+<div class="mt-auto flex items-center justify-between border-t border-surface-container-high pt-4">
+<div class="flex items-center gap-1">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined" data-icon="settings">settings</span></button>
+<button class="p-2 text-error hover:bg-error/5 rounded-full"><span class="material-symbols-outlined" data-icon="remove_circle">remove_circle</span></button>
+</div>
+<button class="flex items-center gap-2 text-on-surface-variant font-bold text-sm cursor-grab">
+                        Reorder <span class="material-symbols-outlined" data-icon="reorder">reorder</span>
+</button>
+</div>
+</div>
+<!-- Product Item 3: Vertical Card -->
+<div class="bg-surface-container-lowest rounded-lg p-6 flex flex-col editorial-shadow">
+<div class="relative mb-6">
+<img class="w-full aspect-[4/3] object-cover rounded-lg" data-alt="loaf of crusty sourdough bread with a delicate flour dusting and sharp scoring patterns against a rustic wooden background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGEKrAxBTU5EMHi8OAI_yUoB55QI7dgA4mRUPcj24a7pzJF5_SK4iyIouiYeABPDZuVYfXnBD6tgzFZ6vdSRzYmjX7BeIReoudtZWTgD__AGTSnuy_PNtT6Nm39Gv943Uz55c1B0Aou9RLFHP_ZrsGR8emHsOQedGFj-0_q4L-wx6ZJSTFKrfxN1vtEN3gL05x0_W85ALlGiFzmEuApiuz2gmbPRNZnqWnVnVeQ9n6rLr6fgXlePBlDzJct3Zpswb8B3L6gFQM_M8c"/>
+</div>
+<span class="text-outline text-xs font-bold tracking-widest uppercase">SKU: BAK-SRD-102</span>
+<h3 class="text-xl font-bold text-on-background mt-1 mb-4">24h Fermented Sourdough</h3>
+<div class="mt-auto flex items-center justify-between border-t border-surface-container-high pt-4">
+<div class="flex items-center gap-1">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined" data-icon="settings">settings</span></button>
+<button class="p-2 text-error hover:bg-error/5 rounded-full"><span class="material-symbols-outlined" data-icon="remove_circle">remove_circle</span></button>
+</div>
+<button class="flex items-center gap-2 text-on-surface-variant font-bold text-sm cursor-grab">
+                        Reorder <span class="material-symbols-outlined" data-icon="reorder">reorder</span>
+</button>
+</div>
+</div>
+<!-- Product Item 4: Asymmetric Grid Element -->
+<div class="lg:col-span-2 bg-surface-container-high/40 rounded-lg p-8 flex items-center gap-10">
+<div class="flex-1">
+<span class="text-secondary font-black text-[10px] tracking-widest uppercase px-2 py-1 bg-secondary-container rounded-sm inline-block mb-3">Seasonal Choice</span>
+<h3 class="text-4xl font-extrabold tracking-tighter text-on-background mb-2 leading-none">Aged Balsamic Reserve</h3>
+<p class="text-sm text-on-surface-variant mb-6">SKU: ART-BAL-AGD-25</p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold text-sm active:scale-95 transition-transform">Modify Showcase</button>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-full font-bold text-sm">View Analytics</button>
+</div>
+</div>
+<div class="hidden md:block w-48 h-48 relative">
+<img class="w-full h-full object-cover rounded-full rotate-3 shadow-xl" data-alt="rich dark chocolate dessert with a glossy finish and edible gold leaf detail on a designer ceramic plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQnK42Z2SOXU04RCFXXYVzKllkaG9qY0_8ZsP7Hd8FBadOSaJw9BXM8fax6v3E894JLIOdD1vd6n6-G5St-MX4YUP3bk-9IZrmM8MbIVyp_l9TicFoJZfaNsBvw3bacxGBI8Tm0X80sLGn1DE6i9kATmKXm2ItYE-lb9yxBRsHuSDXXsq20XW1UapieXfEE1I2ZMlis8RGJaF1B_SGhjsxqSzOHNJ9DFEvr7h-dFYLQOXd0_MYkYKG-T7_nlbts4SxjzkX12iuS6Mv"/>
+</div>
+</div>
+<!-- Add New Showcase Placeholder -->
+<div class="border-2 border-dashed border-outline-variant/30 rounded-lg p-6 flex flex-col items-center justify-center text-center group hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="add">add</span>
+</div>
+<p class="font-bold text-on-background">Spotlight Position #5</p>
+<p class="text-xs text-on-surface-variant">Click to assign a featured product to this slot</p>
+</div>
+</div>
+</main>
+<!-- Navigation Drawer / BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-orange-50/90 backdrop-blur-2xl flex justify-around items-center px-4 pb-6 pt-3 shadow-[0_-4px_24px_rgba(74,37,6,0.06)] rounded-t-[2.5rem]">
+<a class="flex flex-col items-center justify-center text-stone-500 px-5 py-2 hover:text-orange-700 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="home_app_logo">home_app_logo</span>
+<span class="font-plus-jakarta text-[11px] font-semibold uppercase tracking-widest">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 px-5 py-2 hover:text-orange-700 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-plus-jakarta text-[11px] font-semibold uppercase tracking-widest">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 px-5 py-2 hover:text-orange-700 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-plus-jakarta text-[11px] font-semibold uppercase tracking-widest">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-green-100 text-green-900 rounded-full px-5 py-2 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="font-plus-jakarta text-[11px] font-semibold uppercase tracking-widest">Admin</span>
+</a>
+</nav>
+<!-- Contextual Sidebar for Desktop Admin (Mapping 'Featured Products' as Active) -->
+<aside class="hidden md:flex fixed left-0 top-16 bottom-0 w-20 hover:w-64 bg-surface-container-low transition-all duration-300 z-40 flex-col py-8 overflow-hidden group/sidebar border-r border-surface-container-high/30">
+<div class="flex flex-col gap-6 w-full">
+<a class="flex items-center px-6 gap-6 text-stone-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="dashboard">dashboard</span>
+<span class="font-bold whitespace-nowrap opacity-0 group-hover/sidebar:opacity-100 transition-opacity">Overview</span>
+</a>
+<a class="flex items-center px-6 gap-6 text-primary bg-surface-container-highest py-3 border-r-4 border-primary" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="featured_play_list" style="font-variation-settings: 'FILL' 1;">featured_play_list</span>
+<span class="font-bold whitespace-nowrap opacity-0 group-hover/sidebar:opacity-100 transition-opacity">Featured Products</span>
+</a>
+<a class="flex items-center px-6 gap-6 text-stone-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="inventory">inventory</span>
+<span class="font-bold whitespace-nowrap opacity-0 group-hover/sidebar:opacity-100 transition-opacity">Inventory</span>
+</a>
+<a class="flex items-center px-6 gap-6 text-stone-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="bar_chart">bar_chart</span>
+<span class="font-bold whitespace-nowrap opacity-0 group-hover/sidebar:opacity-100 transition-opacity">Analytics</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-6 w-full">
+<a class="flex items-center px-6 gap-6 text-stone-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="settings">settings</span>
+<span class="font-bold whitespace-nowrap opacity-0 group-hover/sidebar:opacity-100 transition-opacity">Settings</span>
+</a>
+</div>
+</aside>
+</body></html>

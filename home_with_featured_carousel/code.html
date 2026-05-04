@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Sensory Gastronome | Destiny4Divine</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#376430",
+              "on-surface-variant": "#7f512e",
+              "surface-variant": "#ffd4b9",
+              "tertiary-container": "#fbb423",
+              "on-secondary-fixed": "#1a4716",
+              "background": "#fff4ef",
+              "inverse-on-surface": "#c99169",
+              "surface-bright": "#fff4ef",
+              "on-tertiary": "#fff1df",
+              "on-tertiary-container": "#523700",
+              "on-tertiary-fixed": "#372400",
+              "tertiary-fixed-dim": "#eba60f",
+              "inverse-surface": "#1c0900",
+              "on-background": "#4a2506",
+              "primary-fixed": "#ff7a2f",
+              "secondary-fixed-dim": "#abdf9e",
+              "primary-container": "#ff7a2f",
+              "surface-tint": "#9c3f00",
+              "outline": "#9e6b47",
+              "primary-fixed-dim": "#f66700",
+              "tertiary-fixed": "#fbb423",
+              "surface-container-lowest": "#ffffff",
+              "error-dim": "#b92902",
+              "secondary-container": "#b9eeab",
+              "on-primary-fixed-variant": "#4f1c00",
+              "surface-container-highest": "#ffd4b9",
+              "tertiary": "#7a5400",
+              "on-primary-fixed": "#000000",
+              "on-surface": "#4a2506",
+              "tertiary-dim": "#6b4900",
+              "on-secondary-container": "#2d5a27",
+              "error-container": "#f95630",
+              "secondary": "#386631",
+              "surface-container": "#ffe3d2",
+              "surface": "#fff4ef",
+              "secondary-fixed": "#b9eeab",
+              "surface-container-high": "#ffdcc6",
+              "on-error": "#ffefec",
+              "surface-dim": "#ffc9a6",
+              "outline-variant": "#dba078",
+              "on-primary": "#fff0ea",
+              "on-primary-container": "#401500",
+              "surface-container-low": "#ffede4",
+              "on-error-container": "#520c00",
+              "inverse-primary": "#fe6b00",
+              "primary": "#9c3f00",
+              "primary-dim": "#893600",
+              "error": "#b02500",
+              "on-secondary": "#d2ffc4",
+              "secondary-dim": "#2d5927",
+              "on-tertiary-fixed-variant": "#5e4000"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fff4ef; color: #4a2506; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-orange-50/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-orange-900 dark:text-orange-500 cursor-pointer p-2 hover:bg-orange-100 dark:hover:bg-stone-800 transition-colors rounded-full active:scale-95 duration-200">menu</span>
+<h1 class="font-plus-jakarta text-lg font-bold tracking-tight text-orange-900 dark:text-orange-500 italic">The Sensory Gastronome</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-orange-900 dark:text-orange-400 font-bold font-plus-jakarta" href="#">Home</a>
+<a class="text-stone-500 dark:text-stone-400 font-plus-jakarta hover:text-orange-700 transition-colors" href="#">Shop</a>
+<a class="text-stone-500 dark:text-stone-400 font-plus-jakarta hover:text-orange-700 transition-colors" href="#">Collection</a>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container active:scale-95 transition-transform duration-200 cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="close up professional portrait of a smiling person with warm studio lighting and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaUcucy2aWuxezwdHQq3DjUkETic-7-Ya6P3TTiB82iSBchbf94Qm24mD495ESAmE5NcogwKIYQHSPA10A0PKNN_KZbO2rcw1PlSMB5eFc3JgeoVP5UKl7noc0As4T4OVKI-yTjBM5MuHaDi7Q45sIv2IzIOl2uodWJjfiylszha0Ua2WzcdfJSMK59QY92XZntrie62U5bdfyc6N98GxM18MvrJmGw7oKXhfwkMvLiEe4rI6ZrAjopdFxMmMSvfNjv0hKT3Q6ufb1"/>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-16 max-w-7xl mx-auto">
+<!-- Editorial Hero Section -->
+<section class="relative px-6 py-12 md:py-24 overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+<div class="md:col-span-7 z-10">
+<span class="text-secondary font-bold tracking-[0.2em] uppercase text-sm mb-4 block">New Season Drop</span>
+<h2 class="text-5xl md:text-8xl font-black text-on-background leading-[0.9] tracking-tighter mb-8">
+                        Divine <br/> <span class="text-primary italic">Comforts.</span>
+</h2>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-md mb-10 leading-relaxed">
+                        Treating everyday essentials as high-end artifacts. Discover the sensory touch of our organic textiles.
+                    </p>
+<div class="flex gap-4">
+<button class="px-8 py-4 rounded-full bg-gradient-to-tr from-primary to-primary-container text-on-primary font-bold shadow-xl active:scale-95 transition-all">
+                            Shop The Drop
+                        </button>
+<button class="px-8 py-4 rounded-full border-2 border-outline-variant text-primary font-bold hover:bg-surface-container-low transition-colors">
+                            Our Story
+                        </button>
+</div>
+</div>
+<div class="md:col-span-5 relative">
+<!-- Overlapping Editorial Imagery -->
+<div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+<img class="w-full h-full object-cover" data-alt="minimalist studio photography of a premium cream colored hoodie hanging on a wooden rail with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwlvvMKqoqyl27TGHGUVDa9nPKAUFADFtHsRVFjS0n42SMxBOwk4WtG_LDhu3bD_pEaVP8Q-K6sWwIk0I-gxO6Kj57i2N3SJzxCgCkeAOAG_MELZVN3ASaMGcjmV5C3LDHVxaeFY9I0YAuIiH1QI9vpoYBllHpYGcXl6IytAH9MCJF8sT54XTk3lpI9VgIdxt0tC8PcdeFrb-cHIsJnp948mmuU3-NehGF2Jzp-BLkDR5d5pnEYgSPRMtxxDr4jY11zarFfJHZYxe-"/>
+</div>
+<div class="absolute -bottom-10 -left-10 w-2/3 aspect-square rounded-full border-8 border-background overflow-hidden shadow-2xl -rotate-6 hidden md:block">
+<img class="w-full h-full object-cover" data-alt="close up of high quality cotton fabric texture with soft natural morning light highlighting the weave" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDODa729xQDGhmiAh3OlGgWz3J_NnQjfOSjzZj2GGrt0iryuubS7apH4MIwQVa50dj3pKoI2MAZhtGW6qGywoDTFi-zij4HcAjNUd2HKMuLSj7nkAomHRHcvCI99zjPCJfmes8WDUgDzLBfvhtkat5f4AFqWnM6qgLpTSfKNVhuxolyyJJRWBMOsHoEzSkjeO4s2aX1FQZJVaJ4sCKVoraWxANZAyWyXYeuo_0b4ZuMxS3iD4VBzIZLwZUwaLNMaY7KgIjdtiXoq5ee"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Navigation -->
+<section class="px-6 py-10 bg-surface-container-low">
+<div class="flex gap-4 overflow-x-auto no-scrollbar py-2">
+<button class="whitespace-nowrap px-8 py-3 rounded-full bg-secondary text-on-secondary font-bold shadow-md">All Essentials</button>
+<button class="whitespace-nowrap px-8 py-3 rounded-full bg-surface-container-high text-on-surface-variant font-semibold hover:bg-surface-variant transition-colors">Premium Hoodies</button>
+<button class="whitespace-nowrap px-8 py-3 rounded-full bg-surface-container-high text-on-surface-variant font-semibold hover:bg-surface-variant transition-colors">Organic T-Shirts</button>
+<button class="whitespace-nowrap px-8 py-3 rounded-full bg-surface-container-high text-on-surface-variant font-semibold hover:bg-surface-variant transition-colors">Ceramic Mugs</button>
+<button class="whitespace-nowrap px-8 py-3 rounded-full bg-surface-container-high text-on-surface-variant font-semibold hover:bg-surface-variant transition-colors">Lifestyle</button>
+</div>
+</section>
+<!-- Featured Products Carousel -->
+<section class="py-16 px-6">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h3 class="text-3xl font-extrabold tracking-tight text-on-background">The Curated Batch</h3>
+<p class="text-on-surface-variant">Handpicked for the sensory-focused individual.</p>
+</div>
+<div class="flex gap-2">
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-8 overflow-x-auto no-scrollbar pb-8 snap-x">
+<!-- Product Card 1 -->
+<div class="min-w-[320px] md:min-w-[400px] snap-start group">
+<div class="aspect-[3/4] rounded-lg bg-surface-container-lowest overflow-hidden relative mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="aesthetic shot of a heavy weight forest green hoodie folded on a minimalist wooden chair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbUpK4oNM7y3cS3h83LJjKSMaA0CDs2oCN2GYr61FNuQl_w2hLHojY4lwhrOPanyJmWeCC6rOiPUgmVqhlxk6BH0tYCpJSb3is3Oo7AfxvmHbrPdYLOjaxMY4TFMMfRycersdLQdSqGgwDg_MxTXW8Kwg8f-wDId6eaChDXoyXvuGCmpy-U3m54a2FSyxdoahaNal73EOty2M1_CX6mb6MjOJBYMXSFUUpt_jwZwEx1IPgbChvZIGB_H6rdJqfrP0lm59dd3ScW2hW"/>
+<button class="absolute bottom-6 right-6 w-14 h-14 rounded-full bg-secondary-container text-on-secondary-container shadow-lg flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+<div class="absolute top-6 left-6 px-4 py-1 rounded-full bg-surface/90 backdrop-blur text-xs font-bold uppercase tracking-widest text-primary">Organic</div>
+</div>
+<h4 class="text-2xl font-bold mb-1">Divine Oversized Hoodie</h4>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-medium">Forest Moss / XL</span>
+<span class="text-xl font-extrabold text-primary">$89.00</span>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="min-w-[320px] md:min-w-[400px] snap-start group">
+<div class="aspect-[3/4] rounded-lg bg-surface-container-lowest overflow-hidden relative mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="clean crisp white t-shirt on a bright wooden table with shadows of leaves dancing on it" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlxIwOUxw_Ff5erlm-WY-Q5gtLjNxElofeNdncOFwUqeQ3KeBhCu6-TW2iW0E2UHGALVA2eqNqrwT5ucqsKPEZN1gcIRNkfFzm4s9btd8atMKeci3QpNNl50_x8OldG-r4sactbnSXrei5kazGphGnxg3jK0F2Gi4HPnanlmvzcHkIRysK45NGEpxmDis0BaBOdKtG-PdTTMAVMHYbvXxVjYMLq8PIMWT3AjLiebaWoD3u6gctirOrAXGHaiAXz3GwG4AfZWbJnupo"/>
+<button class="absolute bottom-6 right-6 w-14 h-14 rounded-full bg-secondary-container text-on-secondary-container shadow-lg flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+<h4 class="text-2xl font-bold mb-1">Celestial Weight Tee</h4>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-medium">Pure Bone / M</span>
+<span class="text-xl font-extrabold text-primary">$45.00</span>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="min-w-[320px] md:min-w-[400px] snap-start group">
+<div class="aspect-[3/4] rounded-lg bg-surface-container-lowest overflow-hidden relative mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="matte black ceramic mug with minimalist typography on a slate coaster next to a steaming espresso" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZWv5lF2DRspPTFaDVjNUtzNZCTfbnd-5FNURiXwHazGGTf984Gvg1c1qRjOviEal_lSlvXxVKwHf8sMol64y0L4c3e1jfU3f_5iSKRqbG70BpFQUC7q-dspCSydvaLGKRLeRKoa8XrrHjchK3VeqA-_akFNgCMjp7RmVAMVaPX7U7Nbn7MofVI4xiM3CbSW_M-7-4y5SmObq-e4V75-VGlc0bX-cP4Xcx9fa5PWJ6fKpe0zM7Dul857SfeavEr-XF310FC0MIa4l2"/>
+<button class="absolute bottom-6 right-6 w-14 h-14 rounded-full bg-secondary-container text-on-secondary-container shadow-lg flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+<div class="absolute top-6 left-6 px-4 py-1 rounded-full bg-tertiary-container text-on-tertiary-container text-xs font-bold uppercase tracking-widest">Limited</div>
+</div>
+<h4 class="text-2xl font-bold mb-1">The Ritual Mug</h4>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-medium">Matte Obsidian / 12oz</span>
+<span class="text-xl font-extrabold text-primary">$32.00</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Story / Editorial Bento -->
+<section class="px-6 py-20 mb-20 bg-surface-container-low rounded-xl mx-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<div class="relative">
+<img class="rounded-lg shadow-2xl w-full h-[500px] object-cover" data-alt="warm inviting interior of a high end boutique with wooden accents and soft lighting on curated lifestyle products" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpg7DMgoEziuibN46EB4Fb1H-d_sN9dNdA_0xpnqxWAJdPMhUQwzW-xxSXSujb-SYe_r-UUO-8taqJV8ap938xm-csSmTX7WChU4n1sfdihD6nku8qnZPRMnZt-mKKKFZyjVX7hXXbHsKBMwBXXnD59bo65VV2vVuioaY8j21hOB_9sprDMyZxcDKnmmmz-CDYS19KN9QdqG3SCxTlgi8Fi3gk7DiuPqGSWcim2czn5UW28EF8O1fc-9jYyDmIpAB0h7fpzczjUJFS"/>
+<div class="absolute -bottom-10 -right-10 bg-surface px-8 py-8 rounded-lg shadow-xl max-w-xs hidden md:block border border-outline-variant/10">
+<span class="text-primary font-bold block mb-2 italic">Est. 2024</span>
+<p class="text-on-surface text-sm leading-relaxed">"We believe the objects we surround ourselves with define our frequency."</p>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<h3 class="text-secondary font-bold tracking-[0.3em] uppercase text-xs mb-6 block">The Philosophy</h3>
+<h2 class="text-5xl font-black text-on-background mb-8 leading-tight">Crafting a Divine <span class="text-primary italic">Daily Ritual.</span></h2>
+<div class="space-y-6 text-on-surface-variant leading-relaxed text-lg">
+<p>Destiny4Divine isn't just a shop; it's a sensory exploration. We curate essentials that bridge the gap between high-fashion editorial and the comfort of your living room.</p>
+<p>Every hoodie is weighted for grounding, every t-shirt is softened for peace, and every mug is shaped for the perfect morning reflection.</p>
+</div>
+<button class="mt-10 flex items-center gap-4 text-primary font-extrabold hover:gap-6 transition-all duration-300">
+                        Read Our Full Narrative
+                        <span class="material-symbols-outlined">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-orange-50/90 dark:bg-stone-950/90 backdrop-blur-2xl rounded-t-[2.5rem] shadow-[0_-4px_24px_rgba(74,37,6,0.06)]">
+<a class="flex flex-col items-center justify-center bg-green-100 dark:bg-green-900/30 text-green-900 dark:text-green-400 rounded-full px-5 py-2 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home_app_logo</span>
+<span class="font-plus-jakarta text-[11px] font-semibold uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-500 px-5 py-2 hover:text-orange-700 transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-plus-jakarta text-[11px] font-semibold uppercase tracking-widest mt-1">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-500 px-5 py-2 hover:text-orange-700 transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="font-plus-jakarta text-[11px] font-semibold uppercase tracking-widest mt-1">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-500 px-5 py-2 hover:text-orange-700 transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+<span class="font-plus-jakarta text-[11px] font-semibold uppercase tracking-widest mt-1">Admin</span>
+</a>
+</nav>
+<!-- Contextual FAB (Hidden on scroll or specific sections but here for Home relevance) -->
+<button class="fixed bottom-28 right-6 md:bottom-10 md:right-10 w-16 h-16 rounded-full bg-primary text-on-primary shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-40">
+<span class="material-symbols-outlined text-3xl">chat_bubble</span>
+</button>
+</body></html>

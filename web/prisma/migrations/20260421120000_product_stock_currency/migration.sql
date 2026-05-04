@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Product" ADD COLUMN "currencyCode" TEXT NOT NULL DEFAULT 'CAD';
+ALTER TABLE "Product" ADD COLUMN "stockQuantity" INTEGER NOT NULL DEFAULT 0;
