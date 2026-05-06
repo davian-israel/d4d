@@ -23,7 +23,7 @@ export async function loginAsAdmin(page: Page): Promise<void> {
   await page.goto("/admin");
   await expect(page).toHaveURL(/\/login/);
   await page.getByTestId("login-email").fill("admin@destiny4divine.test");
-  await page.getByTestId("login-password").fill("Admin12345!");
+  await page.getByTestId("login-password").fill("Admin123456!");
   await page.getByTestId("login-submit").click();
   await expect(page.getByTestId("admin-dashboard")).toBeVisible({ timeout: 15_000 });
 }
@@ -31,7 +31,7 @@ export async function loginAsAdmin(page: Page): Promise<void> {
 export async function loginAsCustomer(page: Page): Promise<void> {
   await page.goto("/login");
   await page.getByTestId("login-email").fill("customer@destiny4divine.test");
-  await page.getByTestId("login-password").fill("Admin12345!");
+  await page.getByTestId("login-password").fill("Customer112345!");
   await page.getByTestId("login-submit").click();
   await expect(page.getByTestId("storefront-account-page")).toBeVisible({ timeout: 15_000 });
 }

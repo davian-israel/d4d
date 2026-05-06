@@ -71,18 +71,18 @@ function resolveSeedCredentials(): SeedCredentials {
   const adminPassword =
     process.env.SEED_ADMIN_PASSWORD && process.env.SEED_ADMIN_PASSWORD.length > 0
       ? process.env.SEED_ADMIN_PASSWORD
-      : "Admin12345!";
+      : "Admin123456!";
   const customerEmail = "customer@destiny4divine.test";
   const customerPassword =
     process.env.SEED_CUSTOMER_PASSWORD && process.env.SEED_CUSTOMER_PASSWORD.length > 0
       ? process.env.SEED_CUSTOMER_PASSWORD
-      : "Admin12345!";
+      : "Customer112345!";
 
   const admin2Email = process.env.SEED_ADMIN2_EMAIL?.trim() || null;
   const admin2Password =
     process.env.SEED_ADMIN2_PASSWORD && process.env.SEED_ADMIN2_PASSWORD.length > 0
       ? process.env.SEED_ADMIN2_PASSWORD
-      : "Admin12345!";
+      : "Admin123456!";
 
   return {
     productionMode,
