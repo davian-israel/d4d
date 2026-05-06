@@ -110,7 +110,7 @@ async function main() {
     },
   });
 
-  let admin2: { email: string } | null = null;
+  let admin2: { email: string | null } | null = null;
   if (creds.admin2Email && creds.admin2Password) {
     const admin2Hash = await hash(creds.admin2Password, 10);
     admin2 = await prisma.user.upsert({
