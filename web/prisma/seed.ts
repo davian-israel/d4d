@@ -24,7 +24,7 @@ interface SeedCredentials {
 function resolveSeedCredentials(): SeedCredentials {
   const productionMode = process.env.SEED_ENV === "production";
   const adminEmail =
-    process.env.SEED_ADMIN_EMAIL?.trim() || "admin@destiny4divine.xyz";
+    process.env.SEED_ADMIN_EMAIL?.trim() || "admin@destiny4divine.test";
 
   if (productionMode) {
     const adminPassword = process.env.SEED_ADMIN_PASSWORD ?? "";
@@ -72,7 +72,7 @@ function resolveSeedCredentials(): SeedCredentials {
     process.env.SEED_ADMIN_PASSWORD && process.env.SEED_ADMIN_PASSWORD.length > 0
       ? process.env.SEED_ADMIN_PASSWORD
       : "Admin12345!";
-  const customerEmail = "customer@destiny4divine.xyz";
+  const customerEmail = "customer@destiny4divine.test";
   const customerPassword =
     process.env.SEED_CUSTOMER_PASSWORD && process.env.SEED_CUSTOMER_PASSWORD.length > 0
       ? process.env.SEED_CUSTOMER_PASSWORD
